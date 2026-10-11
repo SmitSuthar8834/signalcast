@@ -24,6 +24,17 @@ export default async function AuthLayout({
           <div className="w-full max-w-[440px] mx-auto justify-center gap-[20px] h-full flex flex-col text-white">
             <LogoTextComponent />
             <div className="flex">{children}</div>
+            <div className="mt-auto pt-[24px] text-[12px] text-white/50 text-center">
+              <a
+                href="https://github.com/SmitSuthar8834/signalcast"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-white underline"
+              >
+                Source code
+              </a>{' '}
+              · AGPL-3.0
+            </div>
           </div>
         </div>
         <div className="text-[36px] flex-1 pt-[88px] hidden lg:flex flex-col items-center">

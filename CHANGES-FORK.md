@@ -11,6 +11,7 @@ As required by AGPL-3.0 section 5(a), this file lists the modifications made in 
 | 2026-10-11 | Replaced the logo, wordmark and favicons (`apps/frontend/public/*.svg`, `favicon.*`, `new-layout/logo.tsx`, `ui/logo-text.component.tsx`). |
 | 2026-10-11 | Removed the Postiz user count claim and the Postiz customer testimonials from the sign-in page and replaced them with a product description. |
 | 2026-10-11 | Pointed the open-source link in the billing FAQ at this fork's repository. |
+| 2026-10-11 | Removed the CLI tab and onboarding step that installed the Postiz npm CLI, rewrote the chat-agent instruction to use the public API, gated the Postiz marketplace connector buttons (Claude, ChatGPT, Cursor, Grok) behind NEXT_PUBLIC_OFFICIAL_CONNECTORS, and added a Source code link (AGPL section 13) to the app sidebar and the sign-in page. |
 
 Source for this fork: https://github.com/SmitSuthar8834/signalcast
 | 2026-10-11 | Removed the remaining ties to Postiz and Gitroom services: links to postiz.com terms and privacy (replaced by local `/terms` and `/privacy` pages), the Postiz tutorial video embeds, the affiliate program menu item, Chrome Web Store links to the Postiz extension, docs.postiz.com links, analytics domains, synthetic `@postiz.com` e-mail addresses, agency e-mails addressed to postiz.com, Postiz user agents and CLI references in agent tool text. |

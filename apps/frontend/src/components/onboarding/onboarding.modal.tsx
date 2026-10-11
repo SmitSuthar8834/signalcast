@@ -17,7 +17,6 @@ import {
   getMcpConfig,
   isChatOnlyMcpClient,
   isSelfHosted,
-  localCliSteps,
   McpAuth,
   McpClient,
   mcpClients,
@@ -275,8 +274,6 @@ const otherAgents = mcpClients.filter(
 const apiTab = 'API' as const;
 type OnboardingTab = OnboardingAgent | typeof otherTab | typeof apiTab;
 
-const cliCommands = localCliSteps.map((step) => step.code);
-
 const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
   onBack,
   onNext,
@@ -295,7 +292,7 @@ const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
   const apiKey = user?.publicApi || '';
   const available = !!apiKey && !!user?.tier?.public_api;
   // the official connectors work for self-hosted installs too
-  const officialConnectors = billingEnabled || isSelfHosted;
+  const officialConnectors = process.env.NEXT_PUBLIC_OFFICIAL_CONNECTORS === 'true';
 
   const { config, hint } =
     agent === apiTab
@@ -342,7 +339,7 @@ const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
         <div className="text-[13px] text-customColor18 mt-[2px]">
           {t(
             'chat_onboarding_description',
-            'No MCP or CLI settings needed. Paste this into the chat, the agent installs the Signalcast CLI and asks you for your API key.'
+            'No MCP settings needed. Paste this into the chat and the agent uses the public API with your key.'
           )}
         </div>
       </div>
@@ -526,31 +523,6 @@ const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
     </div>
   );
 
-  const cliSection = (
-    <div className="bg-newBgColorInnerInner rounded-[12px] border border-newBorder overflow-hidden flex flex-col">
-      <div className="bg-newBgColorInner px-[20px] py-[14px] border-b border-newBorder">
-        <div className="text-[15px] font-[600]">{t('cli', 'CLI')}</div>
-        <div className="text-[13px] text-customColor18 mt-[2px]">
-          {t(
-            'cli_onboarding_description',
-            'Install the Signalcast CLI and the skill that teaches your agent how to use it'
-          )}
-        </div>
-      </div>
-      <div className="p-[20px] flex flex-col gap-[8px] flex-1">
-        <pre className="bg-newBgColorInner border border-newBorder rounded-[8px] p-[12px] text-[12px] whitespace-pre-wrap break-all overflow-x-auto leading-[1.5] flex-1">
-          {cliCommands.join('\n')}
-        </pre>
-        <div className="flex gap-[8px]">
-          <CopyButton
-            text={cliCommands.join(' && ')}
-            label={t('copy', 'Copy')}
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="flex flex-col gap-[24px] flex-1">
       <div className="flex gap-[4px] flex-col text-center">
@@ -618,10 +590,7 @@ const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
           ) : (
             <>
               {connectorSection}
-              <div className="grid grid-cols-2 gap-[16px]">
-                {mcpSection}
-                {cliSection}
-              </div>
+              {mcpSection}
             </>
           )}
         </div>

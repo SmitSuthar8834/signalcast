@@ -140,6 +140,14 @@ export const LayoutComponent = ({ children }: { children: ReactNode }) => {
                             <Logo />
                           </div>
                           <TopMenu />
+                          <a
+                            href="https://github.com/SmitSuthar8834/signalcast"
+                            target="_blank"
+                            rel="noopener"
+                            className="text-center text-[11px] text-textItemBlur hover:text-newTextColor"
+                          >
+                            Source code
+                          </a>
                         </div>
                       </div>
                     </div>

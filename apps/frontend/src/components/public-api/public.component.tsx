@@ -35,7 +35,7 @@ export const mcpConnectorUrls = {
 // the agent installs the CLI itself and asks you for the API key
 export const chatOnlyMcpClients = {
   'Grok Bot':
-    'Install the Signalcast CLI with `npm install -g postiz`, then install the Signalcast skill with `npx skills add gitroomhq/postiz-agent`. Ask me for my Signalcast API key and set it as the POSTIZ_API_KEY environment variable before using the CLI.',
+    'Ask me for my Signalcast API key and API base URL, then schedule my posts through the public API (POST /public/v1/posts with the Authorization header set to the key).',
 } as const;
 
 export const mcpClients = [
@@ -112,61 +112,61 @@ export const getMcpConfig = (
     switch (client) {
       case 'Claude Code':
         return {
-          config: `claude mcp add postiz --transport http "${oauthUrl}"`,
+          config: `claude mcp add signalcast --transport http "${oauthUrl}"`,
           hint: 'Run this command in your terminal.',
         };
       case 'Cursor':
         return {
-          config: json({ mcpServers: { postiz: { url: oauthUrl } } }),
+          config: json({ mcpServers: { signalcast: { url: oauthUrl } } }),
           hint: 'Add to .cursor/mcp.json in your project root.',
         };
       case 'VS Code / Copilot':
         return {
           config: json({
-            servers: { postiz: { type: 'http', url: oauthUrl } },
+            servers: { signalcast: { type: 'http', url: oauthUrl } },
           }),
           hint: 'Add to .vscode/mcp.json in your project root.',
         };
       case 'Windsurf':
         return {
           config: json({
-            mcpServers: { postiz: { serverUrl: oauthUrl } },
+            mcpServers: { signalcast: { serverUrl: oauthUrl } },
           }),
           hint: 'Add to ~/.codeium/windsurf/mcp_config.json',
         };
       case 'Amp':
         return {
-          config: `amp mcp add postiz ${oauthUrl}`,
+          config: `amp mcp add signalcast ${oauthUrl}`,
           hint: 'Run this command in your terminal.',
         };
       case 'Codex':
         return {
-          config: `# ~/.codex/config.toml\n\n[mcp_servers.postiz]\nurl = "${oauthUrl}"`,
-          hint: 'Add to ~/.codex/config.toml, then run: codex mcp login postiz',
+          config: `# ~/.codex/config.toml\n\n[mcp_servers.signalcast]\nurl = "${oauthUrl}"`,
+          hint: 'Add to ~/.codex/config.toml, then run: codex mcp login signalcast',
         };
       case 'Gemini CLI':
         return {
-          config: json({ mcpServers: { postiz: { url: oauthUrl } } }),
+          config: json({ mcpServers: { signalcast: { url: oauthUrl } } }),
           hint: 'Add to ~/.gemini/settings.json',
         };
       case 'Warp':
         return {
-          config: json({ postiz: { url: oauthUrl } }),
+          config: json({ signalcast: { url: oauthUrl } }),
           hint: 'Settings > MCP Servers > + Add, then paste this config.',
         };
       case 'Hermes':
         return {
-          config: `# ~/.hermes/config.yaml\n\nmcp_servers:\n  postiz:\n    url: "${oauthUrl}"\n    auth: oauth`,
+          config: `# ~/.hermes/config.yaml\n\nmcp_servers:\n  signalcast:\n    url: "${oauthUrl}"\n    auth: oauth`,
           hint: 'Add to ~/.hermes/config.yaml, then run /reload-mcp in the chat.',
         };
       case 'OpenClaw':
         return {
-          config: `openclaw mcp add postiz --url ${oauthUrl} --transport streamable-http --auth oauth && openclaw mcp login postiz`,
+          config: `openclaw mcp add signalcast --url ${oauthUrl} --transport streamable-http --auth oauth && openclaw mcp login signalcast`,
           hint: 'Run this command in your terminal.',
         };
       case 'NanoClaw':
         return {
-          config: `ncl groups config add-mcp-server --id <group-id> --name postiz --url ${oauthUrl}`,
+          config: `ncl groups config add-mcp-server --id <group-id> --name signalcast --url ${oauthUrl}`,
           hint: 'Run this in your terminal, replace <group-id> with the agent group that should get Signalcast.',
         };
     }
@@ -175,14 +175,14 @@ export const getMcpConfig = (
   switch (client) {
     case 'Claude Code':
       return {
-        config: `claude mcp add --transport http postiz ${urlBase} --header "Authorization: ${bearer}"`,
+        config: `claude mcp add --transport http signalcast ${urlBase} --header "Authorization: ${bearer}"`,
         hint: 'Run this command in your terminal.',
       };
     case 'Cursor':
       return {
         config: json({
           mcpServers: {
-            postiz: { url: urlBase, headers: { Authorization: bearer } },
+            signalcast: { url: urlBase, headers: { Authorization: bearer } },
           },
         }),
         hint: 'Add to .cursor/mcp.json in your project root.',
@@ -191,7 +191,7 @@ export const getMcpConfig = (
       return {
         config: json({
           servers: {
-            postiz: {
+            signalcast: {
               type: 'http',
               url: urlBase,
               headers: { Authorization: bearer },
@@ -204,7 +204,7 @@ export const getMcpConfig = (
       return {
         config: json({
           mcpServers: {
-            postiz: {
+            signalcast: {
               serverUrl: urlBase,
               headers: { Authorization: bearer },
             },
@@ -216,21 +216,21 @@ export const getMcpConfig = (
       return {
         config: json({
           'amp.mcpServers': {
-            postiz: { url: urlBase, headers: { Authorization: bearer } },
+            signalcast: { url: urlBase, headers: { Authorization: bearer } },
           },
         }),
         hint: 'Add to your Amp settings.json',
       };
     case 'Codex':
       return {
-        config: `# ~/.codex/config.toml\n\n[mcp_servers.postiz]\nurl = "${urlBase}"\nhttp_headers = { "Authorization" = "${bearer}" }`,
+        config: `# ~/.codex/config.toml\n\n[mcp_servers.signalcast]\nurl = "${urlBase}"\nhttp_headers = { "Authorization" = "${bearer}" }`,
         hint: 'Add to ~/.codex/config.toml',
       };
     case 'Gemini CLI':
       return {
         config: json({
           mcpServers: {
-            postiz: { url: urlBase, headers: { Authorization: bearer } },
+            signalcast: { url: urlBase, headers: { Authorization: bearer } },
           },
         }),
         hint: 'Add to ~/.gemini/settings.json',
@@ -238,13 +238,13 @@ export const getMcpConfig = (
     case 'Warp':
       return {
         config: json({
-          postiz: { url: urlBase, headers: { Authorization: bearer } },
+          signalcast: { url: urlBase, headers: { Authorization: bearer } },
         }),
         hint: 'Settings > MCP Servers > + Add, then paste this config.',
       };
     case 'Hermes':
       return {
-        config: `# ~/.hermes/config.yaml\n\nmcp_servers:\n  postiz:\n    url: "${urlBase}"\n    headers:\n      Authorization: "${bearer}"`,
+        config: `# ~/.hermes/config.yaml\n\nmcp_servers:\n  signalcast:\n    url: "${urlBase}"\n    headers:\n      Authorization: "${bearer}"`,
         hint: 'Add to ~/.hermes/config.yaml, then run /reload-mcp in the chat.',
       };
     case 'OpenClaw':
@@ -252,7 +252,7 @@ export const getMcpConfig = (
         config: json({
           mcp: {
             servers: {
-              postiz: {
+              signalcast: {
                 url: urlBase,
                 transport: 'streamable-http',
                 headers: { Authorization: bearer },
@@ -265,7 +265,7 @@ export const getMcpConfig = (
     case 'NanoClaw':
       // No headers flag, the key travels inside the URL like remote clients
       return {
-        config: `ncl groups config add-mcp-server --id <group-id> --name postiz --url ${mcpBase}/mcp/${apiKey}`,
+        config: `ncl groups config add-mcp-server --id <group-id> --name signalcast --url ${mcpBase}/mcp/${apiKey}`,
         hint: 'Run this in your terminal, replace <group-id> with the agent group that should get Signalcast.',
       };
   }
@@ -316,7 +316,7 @@ const McpSection = ({
   const t = useT();
   const { billingEnabled } = useVariables();
   const [activeClient, setActiveClient] = useState<AnyMcpClient>('Claude');
-  const officialConnectors = billingEnabled || isSelfHosted;
+  const officialConnectors = process.env.NEXT_PUBLIC_OFFICIAL_CONNECTORS === 'true';
   // the directory connectors come first wherever they work
   const tabs: Array<'official' | McpAuth> = officialConnectors
     ? ['official', 'oauth', 'apikey']
@@ -572,158 +572,6 @@ const McpSection = ({
   );
 };
 
-export const localCliSteps = [
-  {
-    label: 'Install the CLI',
-    code: 'npm install -g postiz',
-  },
-  {
-    label: 'Run: postiz auth:login',
-    code: 'postiz auth:login',
-  },
-  {
-    label: 'Install the Signalcast skill for your AI agent',
-    code: 'npx skills add gitroomhq/postiz-agent',
-  },
-] as const;
-
-const ciCliSteps = [
-  {
-    label: 'Install the CLI',
-    code: 'npm install -g postiz',
-  },
-  {
-    label: 'Set your API key as an environment variable',
-    code: 'export POSTIZ_API_KEY="{API_KEY}"',
-  },
-  {
-    label: 'Install the Signalcast skill for your AI agent',
-    code: 'npx skills add gitroomhq/postiz-agent',
-  },
-] as const;
-
-const CliSection = ({ apiKey }: { apiKey: string }) => {
-  const t = useT();
-  const [mode, setMode] = useState<'local' | 'ci'>('local');
-  const [revealed, setRevealed] = useState(false);
-
-  const steps =
-    mode === 'local'
-      ? localCliSteps.map((step) => ({ ...step }))
-      : ciCliSteps.map((step) => ({
-          ...step,
-          code: step.code.replace('{API_KEY}', apiKey),
-        }));
-
-  const displaySteps =
-    mode === 'ci' && !revealed
-      ? steps.map((step) => ({
-          ...step,
-          code: step.code.replace(
-            new RegExp(apiKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'),
-            '*'.repeat(apiKey.length)
-          ),
-        }))
-      : steps;
-
-  return (
-    <div className="bg-newBgColorInnerInner rounded-[12px] border border-newBorder overflow-hidden">
-      <div className="bg-newBgColorInner px-[20px] mobile:px-[14px] py-[14px] border-b border-newBorder flex items-start justify-between gap-[12px] mobile:flex-col">
-        <div>
-          <div className="text-[15px] font-[600]">
-            {t('cli_and_skills', 'CLI & AI Skills')}
-          </div>
-          <div className="text-[13px] text-customColor18 mt-[2px]">
-            {t(
-              'cli_description',
-              'Use the Signalcast CLI to automate posting from your terminal, or install the skill to let your AI agent schedule posts for you.'
-            )}
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-[6px] shrink-0 pt-[2px]">
-          <a
-            className="cursor-pointer px-[16px] h-[36px] bg-[#612BD3] hover:bg-[#5520CB] text-white transition-colors rounded-[8px] text-[13px] font-[600] flex items-center gap-[6px]"
-            href="https://github.com/SmitSuthar8834/signalcast#readme"
-            target="_blank"
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-            {t('read_the_docs', 'Docs')}
-          </a>
-        </div>
-      </div>
-      <div className="p-[20px] mobile:p-[14px] flex flex-col gap-[16px]">
-        <div className="flex gap-[6px]">
-          {(['local', 'ci'] as const).map((m) => (
-            <button
-              key={m}
-              type="button"
-              className={clsx(
-                'cursor-pointer px-[14px] h-[36px] text-[13px] font-[500] rounded-[8px] transition-colors',
-                mode === m
-                  ? 'bg-[#612BD3] text-white'
-                  : 'bg-btnSimple text-customColor18 hover:bg-boxHover hover:text-textColor'
-              )}
-              onClick={() => setMode(m)}
-            >
-              {m === 'local'
-                ? t('locally', 'Locally')
-                : t('ci_remote_servers', 'CI / Remote servers')}
-            </button>
-          ))}
-        </div>
-        {displaySteps.map((step, i) => (
-          <div key={i} className="flex flex-col gap-[6px]">
-            <div className="text-[13px] font-[600] text-customColor18">
-              {i + 1}. {step.label}
-            </div>
-            <pre className="bg-newBgColorInner border border-newBorder rounded-[8px] p-[16px] text-[13px] whitespace-pre-wrap break-all overflow-x-auto leading-[1.6]">
-              {step.code}
-            </pre>
-          </div>
-        ))}
-        <div className="flex flex-wrap gap-[8px]">
-          {mode === 'ci' && (
-            <button
-              type="button"
-              onClick={() => setRevealed(!revealed)}
-              className="cursor-pointer px-[16px] h-[36px] bg-btnSimple hover:bg-boxHover transition-colors rounded-[8px] text-[13px] font-[600] flex items-center gap-[6px]"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {revealed ? (
-                  <>
-                    <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94" />
-                    <path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19" />
-                    <line x1="1" y1="1" x2="23" y2="23" />
-                  </>
-                ) : (
-                  <>
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </>
-                )}
-              </svg>
-              {revealed ? t('hide', 'Hide') : t('reveal', 'Reveal')}
-            </button>
-          )}
-          <CopyButton
-            text={steps.map((s) => s.code).join(' && ')}
-            label={t('copy_all', 'Copy All')}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const PublicApiContent = () => {
   const user = useUser();
   const { backendUrl, frontEndUrl, mcpUrl } = useVariables();
@@ -913,8 +761,6 @@ const PublicApiContent = () => {
           </div>
         </div>
       </div>
-
-      <CliSection apiKey={user.publicApi} />
 
       <McpSection user={user} mcpBase={mcpBase} />
     </div>
