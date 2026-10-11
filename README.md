@@ -1,3 +1,5 @@
+> **Signalcast is a fork of [Postiz](https://github.com/gitroomhq/postiz-app)** (AGPL-3.0). The original README follows. Modifications made in this fork are listed in [CHANGES-FORK.md](./CHANGES-FORK.md).
+
 <p align="center">
   <a href="https://postiz.com/" target="_blank">
   <picture>
