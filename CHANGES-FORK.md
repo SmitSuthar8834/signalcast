@@ -13,3 +13,7 @@ As required by AGPL-3.0 section 5(a), this file lists the modifications made in 
 | 2026-10-11 | Pointed the open-source link in the billing FAQ at this fork's repository. |
 
 Source for this fork: https://github.com/SmitSuthar8834/signalcast
+| 2026-10-11 | Removed the remaining ties to Postiz and Gitroom services: links to postiz.com terms and privacy (replaced by local `/terms` and `/privacy` pages), the Postiz tutorial video embeds, the affiliate program menu item, Chrome Web Store links to the Postiz extension, docs.postiz.com links, analytics domains, synthetic `@postiz.com` e-mail addresses, agency e-mails addressed to postiz.com, Postiz user agents and CLI references in agent tool text. |
+| 2026-10-11 | Deleted the Postiz customer testimonials and avatar photos, the Gitroom contributor license agreements (CCLA, ICLA), Jenkins and SonarQube configuration, the ChatGPT app submission and the CI workflows that publish to Postiz's registries. Rewrote README, CONTRIBUTING, SECURITY and the code of conduct contact; added NOTICE. |
+
+Source for this fork: https://github.com/SmitSuthar8834/signalcast

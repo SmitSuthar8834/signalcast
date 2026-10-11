@@ -87,13 +87,7 @@ export const FirstBillingComponent = () => {
     modals.openModal({
       title: 'Grow Fast With Signalcast (Play the video)',
       children: (
-        <iframe
-          className="h-full aspect-video min-w-[800px]"
-          src="https://www.youtube.com/embed/BdsCVvEYgHU?si=vvhaZJ8I5oXXvVJS?autoplay=1"
-          title="Signalcast Tutorial"
-          allow="autoplay"
-          allowFullScreen
-        />
+        <div className="h-full aspect-video min-w-[800px] flex items-center justify-center text-center p-[24px]">Tutorial video coming soon.</div>
       ),
     });
   };

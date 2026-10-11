@@ -393,7 +393,7 @@ const OnboardingStep2: FC<{ onBack: () => void; onNext: () => void }> = ({
         </div>
         <a
           className="cursor-pointer px-[24px] h-[44px] bg-[#612BD3] hover:bg-[#5520CB] text-white transition-colors rounded-[8px] text-[14px] font-[600] flex items-center gap-[8px] shrink-0"
-          href="https://docs.postiz.com/public-api/introduction"
+          href="https://github.com/SmitSuthar8834/signalcast#readme"
           target="_blank"
         >
           <McpClientIcon client={apiTab} size={18} />
@@ -712,13 +712,7 @@ const OnboardingStep3: FC<{ onBack: () => void; onFinish: () => void }> = ({
       {/* YouTube Video Embed */}
       <div className="relative flex-1 rounded-[12px] overflow-hidden">
         <div className="absolute left-0 top-0 w-full h-full flex justify-center">
-          <iframe
-            className="h-full aspect-video"
-            src="https://www.youtube.com/embed/BdsCVvEYgHU?si=vvhaZJ8I5oXXvVJS?autoplay=1"
-            title="Signalcast Tutorial"
-            allow="autoplay"
-            allowFullScreen
-          />
+          <div className="h-full aspect-video flex items-center justify-center text-center p-[24px]">Tutorial video coming soon.</div>
         </div>
       </div>
 

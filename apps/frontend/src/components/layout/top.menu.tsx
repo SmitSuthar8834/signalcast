@@ -275,6 +275,7 @@ export const useMenuItem = () => {
       path: 'https://affiliate.postiz.com',
       role: ['ADMIN', 'SUPERADMIN', 'USER'],
       requireBilling: true,
+      hide: true,
     },
     {
       name: t('billing', 'Billing'),

@@ -291,7 +291,7 @@ const ExtensionNotFound: FC = () => {
           className="flex-1"
           onClick={() => {
             window.open(
-              'https://chromewebstore.google.com/detail/postiz/cidhffagahknaeodkplfbcpfeielnkjl?hl=en',
+              'https://github.com/SmitSuthar8834/signalcast/tree/main/apps/extension',
               '_blank'
             );
             modals.closeCurrent();

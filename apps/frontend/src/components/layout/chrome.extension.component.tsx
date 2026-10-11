@@ -6,7 +6,7 @@ export const ChromeExtensionComponent = () => {
   }
   return (
     <a
-      href="https://chromewebstore.google.com/detail/postiz/cidhffagahknaeodkplfbcpfeielnkjl"
+      href="https://github.com/SmitSuthar8834/signalcast/tree/main/apps/extension"
       target="_blank"
       className="hover:text-newTextColor"
     >
