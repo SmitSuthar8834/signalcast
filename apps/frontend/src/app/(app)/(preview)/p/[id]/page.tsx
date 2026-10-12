@@ -18,7 +18,7 @@ import { CreationMethodBadge } from '@signalcast/frontend/components/launches/cr
 
 dayjs.extend(utc);
 export const metadata: Metadata = {
-  title: `${'Signalcast'} Preview`,
+  title: 'Signalcast Preview',
   description: '',
 };
 export default async function Auth(

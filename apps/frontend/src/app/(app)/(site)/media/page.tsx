@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 
 export const metadata: Metadata = {
-  title: `${'Signalcast'} Media`,
+  title: 'Signalcast Media',
   description: '',
 };
 

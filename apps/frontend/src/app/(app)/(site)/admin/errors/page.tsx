@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 
 export const metadata: Metadata = {
-  title: `${'Signalcast'} Admin Errors`,
+  title: 'Signalcast Admin Errors',
   description: '',
 };
 

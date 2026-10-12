@@ -28,7 +28,7 @@ const useFaqList = () => {
     {
       title: t(
         'faq_can_i_trust_signalcast',
-        `Can I trust ${'Signalcast'}?`
+        `Can I trust Signalcast?`
       ),
       description: t(
         'faq_signalcast_is_proudly_open_source',

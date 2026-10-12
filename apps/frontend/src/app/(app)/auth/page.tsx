@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { getT } from '@signalcast/react/translation/get.translation.service.backend';
 import { LoginWithOidc } from '@signalcast/frontend/components/auth/login.with.oidc';
 export const metadata: Metadata = {
-  title: `${'Signalcast'} Register`,
+  title: 'Signalcast Register',
   description: '',
 };
 export default async function Auth(params: {searchParams: Promise<{provider: string}>}) {

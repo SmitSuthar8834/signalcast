@@ -3,7 +3,7 @@ import { ForgotReturn } from '@signalcast/frontend/components/auth/forgot-return
 import { Metadata } from 'next';
 import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 export const metadata: Metadata = {
-  title: `${'Signalcast'} Forgot Password`,
+  title: 'Signalcast Forgot Password',
   description: '',
 };
 export default async function Auth(params: {
