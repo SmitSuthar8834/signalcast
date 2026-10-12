@@ -1,7 +1,9 @@
 services:
-  postiz:
-    image: ghcr.io/gitroomhq/postiz-app:latest
-    container_name: postiz
+  signalcast:
+    # Build your own image from this repository (see var/docker/docker-build.sh);
+    # the upstream ghcr.io/gitroomhq/postiz-app image is NOT this fork.
+    image: localhost/signalcast:latest
+    container_name: signalcast
     restart: always
     environment:
       # === Required Settings

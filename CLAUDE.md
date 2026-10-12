@@ -1,4 +1,4 @@
-This project is Postiz, a tool to schedule social media and chat posts to 28+ channels.
+This project is Signalcast, a tool to schedule social media and chat posts to 28+ channels. It is a fork of Postiz (AGPL-3.0); see CHANGES-FORK.md and NOTICE. Do not reintroduce the Postiz or Gitroom names, logos or links in anything a user can see.
 You can add posts to the calendar, they will be added into a workflow and posted at the right time.
 You can find things like:
 - Schedule posts

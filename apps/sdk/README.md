@@ -1,24 +1,18 @@
-# Postiz NodeJS SDK
+# Signalcast Node SDK
 
-This is the NodeJS SDK for [Postiz](https://postiz.com).
-
-You can start by installing the package:
+Node client for the Signalcast public API.
 
 ```bash
-npm install @postiz/node
+npm install @signalcast/node
 ```
 
-## Usage
-```typescript
-import Postiz from '@postiz/node';
-const postiz = new Postiz('your api key', 'your self-hosted instance (optional)');
+```ts
+import Signalcast from '@signalcast/node';
+const client = new Signalcast('your api key', 'https://your-instance.example.com');
 ```
 
-The available methods are:
-- `post(posts: CreatePostDto)` - Schedule a post to Postiz
-- `postList(filters: GetPostsDto)` - Get a list of posts
-- `upload(file: Buffer, extension: string)` - Upload a file to Postiz
-- `integrations()` - Get a list of connected channels
-- `deletePost(id: string)` - Delete a post by ID
+- `post(posts: CreatePostDto)` schedules posts
+- `getPosts(query: GetPostsDto)` lists posts
+- `upload(file: Buffer, extension: string)` uploads a media file
 
-Alternatively you can use the SDK with curl, check the [Postiz API documentation](https://docs.postiz.com/public-api) for more information.
+The base URL defaults to `SIGNALCAST_API_URL` or `http://localhost:3000`. The same endpoints work with curl; see the repository README.
