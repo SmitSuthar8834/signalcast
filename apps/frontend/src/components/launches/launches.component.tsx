@@ -3,36 +3,36 @@
 import {
   AddProviderButton,
   CustomVariables,
-} from '@gitroom/frontend/components/launches/add.provider.component';
+} from '@signalcast/frontend/components/launches/add.provider.component';
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
-import SafeImage from '@gitroom/react/helpers/safe.image';
+import SafeImage from '@signalcast/react/helpers/safe.image';
 import { capitalize, groupBy, orderBy } from 'lodash';
-import { CalendarWeekProvider } from '@gitroom/frontend/components/launches/calendar.context';
-import { Filters } from '@gitroom/frontend/components/launches/filters';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
+import { CalendarWeekProvider } from '@signalcast/frontend/components/launches/calendar.context';
+import { Filters } from '@signalcast/frontend/components/launches/filters';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { LoadingComponent } from '@signalcast/frontend/components/layout/loading';
 import clsx from 'clsx';
 import { useUser } from '../layout/user.context';
-import { Menu } from '@gitroom/frontend/components/launches/menu/menu';
+import { Menu } from '@signalcast/frontend/components/launches/menu/menu';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Integration } from '@prisma/client';
-import ImageWithFallback from '@gitroom/react/helpers/image.with.fallback';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { useFireEvents } from '@gitroom/helpers/utils/use.fire.events';
+import ImageWithFallback from '@signalcast/react/helpers/image.with.fallback';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { useFireEvents } from '@signalcast/helpers/utils/use.fire.events';
 import { Calendar } from './calendar';
 import { useDrag, useDrop } from 'react-dnd';
-import { DNDProvider } from '@gitroom/frontend/components/launches/helpers/dnd.provider';
+import { DNDProvider } from '@signalcast/frontend/components/launches/helpers/dnd.provider';
 import { GeneratorComponent } from './generator/generator';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { NewPost } from '@gitroom/frontend/components/launches/new.post';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useIntegrationList } from '@gitroom/frontend/components/launches/helpers/use.integration.list';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { NewPost } from '@signalcast/frontend/components/launches/new.post';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useIntegrationList } from '@signalcast/frontend/components/launches/helpers/use.integration.list';
 import useCookie from 'react-use-cookie';
-import { Onboarding } from '@gitroom/frontend/components/onboarding/onboarding';
-import { ChannelsAfterPayment } from '@gitroom/frontend/components/layout/check.payment';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { Input } from '@gitroom/react/form/input';
-import { Button } from '@gitroom/react/form/button';
+import { Onboarding } from '@signalcast/frontend/components/onboarding/onboarding';
+import { ChannelsAfterPayment } from '@signalcast/frontend/components/layout/check.payment';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { Input } from '@signalcast/react/form/input';
+import { Button } from '@signalcast/react/form/button';
 
 export const SVGLine = () => {
   return (

@@ -1,31 +1,31 @@
 import { BadRequestException, HttpException, Injectable } from '@nestjs/common';
-import { MediaRepository } from '@gitroom/nestjs-libraries/database/prisma/media/media.repository';
-import { OpenaiService } from '@gitroom/nestjs-libraries/openai/openai.service';
-import { generationError } from '@gitroom/nestjs-libraries/openai/generation.error';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { MediaRepository } from '@signalcast/nestjs-libraries/database/prisma/media/media.repository';
+import { OpenaiService } from '@signalcast/nestjs-libraries/openai/openai.service';
+import { generationError } from '@signalcast/nestjs-libraries/openai/generation.error';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
 import { Organization } from '@prisma/client';
-import { SaveMediaInformationDto } from '@gitroom/nestjs-libraries/dtos/media/save.media.information.dto';
-import { VideoManager } from '@gitroom/nestjs-libraries/videos/video.manager';
-import { VideoDto } from '@gitroom/nestjs-libraries/dtos/videos/video.dto';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
+import { SaveMediaInformationDto } from '@signalcast/nestjs-libraries/dtos/media/save.media.information.dto';
+import { VideoManager } from '@signalcast/nestjs-libraries/videos/video.manager';
+import { VideoDto } from '@signalcast/nestjs-libraries/dtos/videos/video.dto';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
 import {
   AuthorizationActions,
   Sections,
   SubscriptionException,
-} from '@gitroom/backend/services/auth/permissions/permission.exception.class';
+} from '@signalcast/backend/services/auth/permissions/permission.exception.class';
 import { TemporalService } from 'nestjs-temporal-core';
 import { TypedSearchAttributes } from '@temporalio/common';
-import { organizationId } from '@gitroom/nestjs-libraries/temporal/temporal.search.attribute';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { MediaProcessorJob } from '@gitroom/nestjs-libraries/upload/media.processor.interface';
+import { organizationId } from '@signalcast/nestjs-libraries/temporal/temporal.search.attribute';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { MediaProcessorJob } from '@signalcast/nestjs-libraries/upload/media.processor.interface';
 import { extname } from 'path';
 import { randomBytes } from 'crypto';
-import { ioRedis } from '@gitroom/nestjs-libraries/redis/redis.service';
-import { ssrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { ioRedis } from '@signalcast/nestjs-libraries/redis/redis.service';
+import { ssrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import {
   getMaxSize,
   uploadStreamToStorage,
-} from '@gitroom/nestjs-libraries/upload/custom.upload.validation';
+} from '@signalcast/nestjs-libraries/upload/custom.upload.validation';
 
 // What every upload is normalized to before a provider ever sees it. The
 // service applies exactly these, so a platform-specific need belongs in the

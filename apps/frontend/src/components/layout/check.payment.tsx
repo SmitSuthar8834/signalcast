@@ -1,11 +1,11 @@
 import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Loading from '@gitroom/frontend/components/layout/loading';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { useDecisionModal } from '@gitroom/frontend/components/layout/new-modal';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import Loading from '@signalcast/frontend/components/layout/loading';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { useDecisionModal } from '@signalcast/frontend/components/layout/new-modal';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 export const CheckPayment: FC<{
   check: string;
   mutate: () => void;

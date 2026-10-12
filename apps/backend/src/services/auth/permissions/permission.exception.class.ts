@@ -7,7 +7,7 @@ export enum Sections {
   CLIPPING_MINUTES = 'clipping_minutes',
   TEAM_MEMBERS = 'team_members',
   COMMUNITY_FEATURES = 'community_features',
-  FEATURED_BY_GITROOM = 'featured_by_gitroom',
+  FEATURED_BY_SIGNALCAST = 'featured_by_signalcast',
   AI = 'ai',
   IMPORT_FROM_CHANNELS = 'import_from_channels',
   ADMIN = 'admin',

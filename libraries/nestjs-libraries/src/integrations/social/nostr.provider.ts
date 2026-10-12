@@ -3,14 +3,14 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 import dayjs from 'dayjs';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import { getPublicKey, Relay, finalizeEvent, SimplePool } from 'nostr-tools';
 
 import WebSocket from 'ws';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
 import { Integration } from '@prisma/client';
 
 // @ts-ignore

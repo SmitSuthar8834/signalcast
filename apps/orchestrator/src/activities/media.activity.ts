@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Activity, ActivityMethod } from 'nestjs-temporal-core';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
 
 @Injectable()
 @Activity()

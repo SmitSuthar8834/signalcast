@@ -3,13 +3,13 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import { Integration } from '@prisma/client';
-import { TwitchDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/twitch.dto';
-import { timer } from '@gitroom/helpers/utils/timer';
+import { TwitchDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/twitch.dto';
+import { timer } from '@signalcast/helpers/utils/timer';
 
 export class TwitchProvider extends SocialAbstract implements SocialProvider {
   override maxConcurrentJob = 5; // Twitch limits are per user

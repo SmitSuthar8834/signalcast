@@ -4,11 +4,11 @@ import { FC } from 'react';
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
-import { MoltbookDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/moltbook.dto';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { Input } from '@gitroom/react/form/input';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
+import { MoltbookDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/moltbook.dto';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { Input } from '@signalcast/react/form/input';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 
 const MoltbookSettings: FC = () => {
   const form = useSettings();

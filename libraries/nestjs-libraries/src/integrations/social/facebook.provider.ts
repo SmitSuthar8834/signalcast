@@ -5,23 +5,23 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 import dayjs from 'dayjs';
 import {
   BadBody,
   SocialAbstract,
   ValidityMedia,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import {
   FacebookDto,
   FACEBOOK_PRESET_MAX_CHARS,
-} from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/facebook.dto';
-import { DribbbleDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/dribbble.dto';
+} from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/facebook.dto';
+import { DribbbleDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/dribbble.dto';
 import { Integration } from '@prisma/client';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
 
 export const META_GRAPH_API_VERSION = 'v25.0';
 

@@ -1,8 +1,8 @@
 'use client';
 
 import { FC, FormEvent, useCallback, useState } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { Input } from '@gitroom/react/form/input';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { Input } from '@signalcast/react/form/input';
 
 export const OAuthSelfHosted: FC<{
   appName: string;
@@ -93,7 +93,7 @@ export const OAuthSelfHosted: FC<{
         removeError={true}
         value={instanceUrl}
         onChange={(e) => setInstanceUrl(e.target.value)}
-        placeholder="https://postiz.example.com"
+        placeholder="https://signalcast.example.com"
         inputMode="url"
         autoComplete="off"
         spellCheck={false}

@@ -4,7 +4,7 @@ import {
   useCopilotContext,
   useCopilotReadable,
 } from '@copilotkit/react-core';
-import AutoResizingTextarea from '@gitroom/frontend/components/agents/agent.textarea';
+import AutoResizingTextarea from '@signalcast/frontend/components/agents/agent.textarea';
 import { useChatContext, InputProps } from '@copilotkit/react-ui';
 const MAX_NEWLINES = 6;
 

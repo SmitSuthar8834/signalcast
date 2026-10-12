@@ -1,10 +1,10 @@
 export const dynamic = 'force-dynamic';
 import { Metadata } from 'next';
-import { AfterActivate } from '@gitroom/frontend/components/auth/after.activate';
-import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
+import { AfterActivate } from '@signalcast/frontend/components/auth/after.activate';
+import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 export const metadata: Metadata = {
   title: `${
-    isGeneralServerSide() ? 'Signalcast' : 'Gitroom'
+    'Signalcast'
   } - Activate your account`,
   description: '',
 };

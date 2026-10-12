@@ -10,11 +10,11 @@ import {
   ErrorCode,
   McpError,
 } from '@modelcontextprotocol/sdk/types.js';
-import { getRelay } from '@gitroom/nestjs-libraries/chat/async.storage';
-import { ssrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
-import { isSafePublicHttpsUrl } from '@gitroom/nestjs-libraries/dtos/webhooks/webhook.url.validator';
-import { OAuthService } from '@gitroom/nestjs-libraries/database/prisma/oauth/oauth.service';
-import { LoadToolsService } from '@gitroom/nestjs-libraries/chat/load.tools.service';
+import { getRelay } from '@signalcast/nestjs-libraries/chat/async.storage';
+import { ssrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { isSafePublicHttpsUrl } from '@signalcast/nestjs-libraries/dtos/webhooks/webhook.url.validator';
+import { OAuthService } from '@signalcast/nestjs-libraries/database/prisma/oauth/oauth.service';
+import { LoadToolsService } from '@signalcast/nestjs-libraries/chat/load.tools.service';
 
 export interface SelfHostedInstance {
   mcpUrl: string;

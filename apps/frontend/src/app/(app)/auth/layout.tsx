@@ -1,11 +1,11 @@
-import { getT } from '@gitroom/react/translation/get.translation.service.backend';
+import { getT } from '@signalcast/react/translation/get.translation.service.backend';
 
 export const dynamic = 'force-dynamic';
 import { ReactNode } from 'react';
 import loadDynamic from 'next/dynamic';
-import { LogoTextComponent } from '@gitroom/frontend/components/ui/logo-text.component';
-import { MantineWrapper } from '@gitroom/react/helpers/mantine.wrapper';
-import { Toaster } from '@gitroom/react/toaster/toaster';
+import { LogoTextComponent } from '@signalcast/frontend/components/ui/logo-text.component';
+import { MantineWrapper } from '@signalcast/react/helpers/mantine.wrapper';
+import { Toaster } from '@signalcast/react/toaster/toaster';
 const ReturnUrlComponent = loadDynamic(() => import('./return.url.component'));
 export default async function AuthLayout({
   children,

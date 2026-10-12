@@ -5,17 +5,17 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { timer } from '@gitroom/helpers/utils/timer';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { timer } from '@signalcast/helpers/utils/timer';
 import {
   BadBody,
   SocialAbstract,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
-import { WhopDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/whop.dto';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { WhopDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/whop.dto';
 import { Integration } from '@prisma/client';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
 
 export class WhopProvider extends SocialAbstract implements SocialProvider {
   override maxConcurrentJob = 3; // Whop limits are per token

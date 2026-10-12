@@ -11,8 +11,8 @@ services:
       FRONTEND_URL: 'http://localhost:4007'
       NEXT_PUBLIC_BACKEND_URL: 'http://localhost:4007/api'
       JWT_SECRET: 'random string that is unique to every install - just type random characters here!'
-      DATABASE_URL: 'postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local'
-      REDIS_URL: 'redis://postiz-redis:6379'
+      DATABASE_URL: 'postgresql://signalcast-user:signalcast-password@signalcast-postgres:5432/signalcast-db-local'
+      REDIS_URL: 'redis://signalcast-redis:6379'
       BACKEND_INTERNAL_URL: 'http://localhost:3000'
       TEMPORAL_ADDRESS: 'temporal:7233'
       IS_GENERAL: 'true'
@@ -75,16 +75,16 @@ services:
       MASTODON_CLIENT_SECRET: ''
 
       # === OAuth & Authentik Settings
-      # NEXT_PUBLIC_POSTIZ_OAUTH_DISPLAY_NAME: 'Authentik'
-      # NEXT_PUBLIC_POSTIZ_OAUTH_LOGO_URL: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/master/png/authentik.png'
-      # POSTIZ_GENERIC_OAUTH: 'false'
-      # POSTIZ_OAUTH_URL: 'https://auth.example.com'
-      # POSTIZ_OAUTH_AUTH_URL: 'https://auth.example.com/application/o/authorize'
-      # POSTIZ_OAUTH_TOKEN_URL: 'https://auth.example.com/application/o/token'
-      # POSTIZ_OAUTH_USERINFO_URL: 'https://authentik.example.com/application/o/userinfo'
-      # POSTIZ_OAUTH_CLIENT_ID: ''
-      # POSTIZ_OAUTH_CLIENT_SECRET: ''
-      # POSTIZ_OAUTH_SCOPE: "openid profile email"  # Optional: uncomment to override default scope
+      # NEXT_PUBLIC_SIGNALCAST_OAUTH_DISPLAY_NAME: 'Authentik'
+      # NEXT_PUBLIC_SIGNALCAST_OAUTH_LOGO_URL: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/master/png/authentik.png'
+      # SIGNALCAST_GENERIC_OAUTH: 'false'
+      # SIGNALCAST_OAUTH_URL: 'https://auth.example.com'
+      # SIGNALCAST_OAUTH_AUTH_URL: 'https://auth.example.com/application/o/authorize'
+      # SIGNALCAST_OAUTH_TOKEN_URL: 'https://auth.example.com/application/o/token'
+      # SIGNALCAST_OAUTH_USERINFO_URL: 'https://authentik.example.com/application/o/userinfo'
+      # SIGNALCAST_OAUTH_CLIENT_ID: ''
+      # SIGNALCAST_OAUTH_CLIENT_SECRET: ''
+      # SIGNALCAST_OAUTH_SCOPE: "openid profile email"  # Optional: uncomment to override default scope
 
       # === Sentry
 
@@ -122,39 +122,39 @@ services:
       # LINK_DRIP_SHORT_LINK_DOMAIN: "dripl.ink"
 
     volumes:
-      - postiz-config:/config/
-      - postiz-uploads:/uploads/
+      - signalcast-config:/config/
+      - signalcast-uploads:/uploads/
     ports:
       - '4007:5000'
     networks:
-      - postiz-network
+      - signalcast-network
       - temporal-network
     depends_on:
-      postiz-postgres:
+      signalcast-postgres:
         condition: service_healthy
-      postiz-redis:
+      signalcast-redis:
         condition: service_healthy
 
-  postiz-postgres:
+  signalcast-postgres:
     image: postgres:17-alpine
-    container_name: postiz-postgres
+    container_name: signalcast-postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: postiz-password
-      POSTGRES_USER: postiz-user
-      POSTGRES_DB: postiz-db-local
+      POSTGRES_PASSWORD: signalcast-password
+      POSTGRES_USER: signalcast-user
+      POSTGRES_DB: signalcast-db-local
     volumes:
       - postgres-volume:/var/lib/postgresql/data
     networks:
-      - postiz-network
+      - signalcast-network
     healthcheck:
-      test: pg_isready -U postiz-user -d postiz-db-local
+      test: pg_isready -U signalcast-user -d signalcast-db-local
       interval: 10s
       timeout: 3s
       retries: 3
-  postiz-redis:
+  signalcast-redis:
     image: redis:7.2
-    container_name: postiz-redis
+    container_name: signalcast-redis
     restart: always
     healthcheck:
       test: redis-cli ping
@@ -162,9 +162,9 @@ services:
       timeout: 3s
       retries: 3
     volumes:
-      - postiz-redis-data:/data
+      - signalcast-redis-data:/data
     networks:
-      - postiz-network
+      - signalcast-network
 
   # For Application Monitoring / Debugging
   spotlight:
@@ -174,7 +174,7 @@ services:
       - 8969:8969/tcp
     image: ghcr.io/getsentry/spotlight:latest
     networks:
-      - postiz-network
+      - signalcast-network
 
   # -----------------------
   # Temporal Stack
@@ -264,17 +264,17 @@ volumes:
   postgres-volume:
     external: false
 
-  postiz-redis-data:
+  signalcast-redis-data:
     external: false
 
-  postiz-config:
+  signalcast-config:
     external: false
 
-  postiz-uploads:
+  signalcast-uploads:
     external: false
 
 networks:
-  postiz-network:
+  signalcast-network:
     external: false
   temporal-network:
     driver: bridge

@@ -4,10 +4,10 @@ import {
   NotFoundException,
   ValidationPipe,
 } from '@nestjs/common';
-import { PostsRepository } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.repository';
-import { CreatePostDto } from '@gitroom/nestjs-libraries/dtos/posts/create.post.dto';
+import { PostsRepository } from '@signalcast/nestjs-libraries/database/prisma/posts/posts.repository';
+import { CreatePostDto } from '@signalcast/nestjs-libraries/dtos/posts/create.post.dto';
 import dayjs from 'dayjs';
-import { IntegrationManager } from '@gitroom/nestjs-libraries/integrations/integration.manager';
+import { IntegrationManager } from '@signalcast/nestjs-libraries/integrations/integration.manager';
 import {
   Integration,
   Post,
@@ -16,26 +16,26 @@ import {
   CreationMethod,
   State,
 } from '@prisma/client';
-import { GetPostsDto } from '@gitroom/nestjs-libraries/dtos/posts/get.posts.dto';
-import { GetPostsListDto } from '@gitroom/nestjs-libraries/dtos/posts/get.posts.list.dto';
+import { GetPostsDto } from '@signalcast/nestjs-libraries/dtos/posts/get.posts.dto';
+import { GetPostsListDto } from '@signalcast/nestjs-libraries/dtos/posts/get.posts.list.dto';
 import { groupBy, shuffle, uniqBy } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
-import { CreateGeneratedPostsDto } from '@gitroom/nestjs-libraries/dtos/generator/create.generated.posts.dto';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
+import { CreateGeneratedPostsDto } from '@signalcast/nestjs-libraries/dtos/generator/create.generated.posts.dto';
+import { IntegrationService } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.service';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
 import utc from 'dayjs/plugin/utc';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
-import { ShortLinkService } from '@gitroom/nestjs-libraries/short-linking/short.link.service';
-import { CreateTagDto } from '@gitroom/nestjs-libraries/dtos/posts/create.tag.dto';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
+import { ShortLinkService } from '@signalcast/nestjs-libraries/short-linking/short.link.service';
+import { CreateTagDto } from '@signalcast/nestjs-libraries/dtos/posts/create.tag.dto';
 import {
   minifyPostsList,
   minifyPosts,
-} from '@gitroom/helpers/utils/posts.list.minify';
+} from '@signalcast/helpers/utils/posts.list.minify';
 import axios from 'axios';
 import sharp from 'sharp';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
 import { Readable } from 'stream';
-import { OpenaiService } from '@gitroom/nestjs-libraries/openai/openai.service';
+import { OpenaiService } from '@signalcast/nestjs-libraries/openai/openai.service';
 dayjs.extend(utc);
 import * as Sentry from '@sentry/nestjs';
 import { TemporalService } from 'nestjs-temporal-core';
@@ -43,20 +43,20 @@ import { TypedSearchAttributes } from '@temporalio/common';
 import {
   organizationId,
   postId as postIdSearchParam,
-} from '@gitroom/nestjs-libraries/temporal/temporal.search.attribute';
-import { AnalyticsData } from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { ioRedis } from '@gitroom/nestjs-libraries/redis/redis.service';
-import { RefreshToken } from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { RefreshIntegrationService } from '@gitroom/nestjs-libraries/integrations/refresh.integration.service';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
-import { stripLinks } from '@gitroom/helpers/utils/strip.links';
+} from '@signalcast/nestjs-libraries/temporal/temporal.search.attribute';
+import { AnalyticsData } from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { ioRedis } from '@signalcast/nestjs-libraries/redis/redis.service';
+import { RefreshToken } from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { RefreshIntegrationService } from '@signalcast/nestjs-libraries/integrations/refresh.integration.service';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
+import { stripLinks } from '@signalcast/helpers/utils/strip.links';
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { postContentPlainText } from '@gitroom/helpers/utils/sanitize.post.content';
-import { CreatePublicCommentDto } from '@gitroom/nestjs-libraries/dtos/comments/add.comment.dto';
-import { countLength } from '@gitroom/helpers/utils/count.length';
+import { stripHtmlValidation } from '@signalcast/helpers/utils/strip.html.validation';
+import { postContentPlainText } from '@signalcast/helpers/utils/sanitize.post.content';
+import { CreatePublicCommentDto } from '@signalcast/nestjs-libraries/dtos/comments/add.comment.dto';
+import { countLength } from '@signalcast/helpers/utils/count.length';
 
 type PostWithConditionals = Post & {
   integration?: Integration;

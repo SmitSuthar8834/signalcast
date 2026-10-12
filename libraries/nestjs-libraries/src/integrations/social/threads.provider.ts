@@ -5,19 +5,19 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { timer } from '@gitroom/helpers/utils/timer';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { timer } from '@signalcast/helpers/utils/timer';
 import dayjs from 'dayjs';
 import {
   BadBody,
   SocialAbstract,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import { capitalize, chunk } from 'lodash';
-import { Plug } from '@gitroom/helpers/decorators/plug.decorator';
+import { Plug } from '@signalcast/helpers/decorators/plug.decorator';
 import { Integration } from '@prisma/client';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { stripHtmlValidation } from '@signalcast/helpers/utils/strip.html.validation';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 export class ThreadsProvider extends SocialAbstract implements SocialProvider {
   identifier = 'threads';

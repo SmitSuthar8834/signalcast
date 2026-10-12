@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import dynamic from 'next/dynamic';
-import AuthenticationComponent from '@gitroom/frontend/components/settings/authentication.component';
-import EmailNotificationsComponent from '@gitroom/frontend/components/settings/email-notifications.component';
-import ShortlinkPreferenceComponent from '@gitroom/frontend/components/settings/shortlink-preference.component';
-import DeleteAccountComponent from '@gitroom/frontend/components/settings/delete-account.component';
+import AuthenticationComponent from '@signalcast/frontend/components/settings/authentication.component';
+import EmailNotificationsComponent from '@signalcast/frontend/components/settings/email-notifications.component';
+import ShortlinkPreferenceComponent from '@signalcast/frontend/components/settings/shortlink-preference.component';
+import DeleteAccountComponent from '@signalcast/frontend/components/settings/delete-account.component';
 
 const MetricComponent = dynamic(
-  () => import('@gitroom/frontend/components/settings/metric.component'),
+  () => import('@signalcast/frontend/components/settings/metric.component'),
   {
     ssr: false,
   }

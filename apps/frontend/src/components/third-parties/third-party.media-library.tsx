@@ -1,14 +1,14 @@
 'use client';
 
 import React, { FC, useCallback, useState } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { useToaster } from '@gitroom/react/toaster/toaster';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { useToaster } from '@signalcast/react/toaster/toaster';
 import clsx from 'clsx';
-import { VideoFrame } from '@gitroom/react/helpers/video.frame';
-import { Pagination } from '@gitroom/frontend/components/media/media.component';
+import { VideoFrame } from '@signalcast/react/helpers/video.frame';
+import { Pagination } from '@signalcast/frontend/components/media/media.component';
 
 const ThirdPartyMediaLibraryBrowser: FC<{
   integration: any;

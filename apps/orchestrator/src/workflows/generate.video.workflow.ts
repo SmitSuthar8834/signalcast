@@ -1,6 +1,6 @@
 import { proxyActivities } from '@temporalio/workflow';
-import { VideoActivity } from '@gitroom/orchestrator/activities/video.activity';
-import type { VideoDto } from '@gitroom/nestjs-libraries/dtos/videos/video.dto';
+import { VideoActivity } from '@signalcast/orchestrator/activities/video.activity';
+import type { VideoDto } from '@signalcast/nestjs-libraries/dtos/videos/video.dto';
 
 // Generating a video consumes a credit, so a failed attempt is never retried
 const { generateVideo } = proxyActivities<VideoActivity>({

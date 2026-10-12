@@ -3,12 +3,12 @@
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
-import { ListmonkDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/listmonk.dto';
-import { Input } from '@gitroom/react/form/input';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { SelectList } from '@gitroom/frontend/components/new-launch/providers/listmonk/select.list';
-import { SelectTemplates } from '@gitroom/frontend/components/new-launch/providers/listmonk/select.templates';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
+import { ListmonkDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/listmonk.dto';
+import { Input } from '@signalcast/react/form/input';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { SelectList } from '@signalcast/frontend/components/new-launch/providers/listmonk/select.list';
+import { SelectTemplates } from '@signalcast/frontend/components/new-launch/providers/listmonk/select.templates';
 
 const SettingsComponent = () => {
   const form = useSettings();

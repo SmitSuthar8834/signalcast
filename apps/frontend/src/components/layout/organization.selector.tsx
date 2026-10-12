@@ -1,9 +1,9 @@
 'use client';
 
 import React, { FC, useCallback, useMemo } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
 import clsx from 'clsx';
 export const OrganizationSelector: FC<{ asOpenSelect?: boolean }> = ({
   asOpenSelect,

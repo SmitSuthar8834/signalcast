@@ -1,14 +1,14 @@
 'use client';
 
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import Link from 'next/link';
-import { Button } from '@gitroom/react/form/button';
-import { Input } from '@gitroom/react/form/input';
+import { Button } from '@signalcast/react/form/button';
+import { Input } from '@signalcast/react/form/input';
 import { useMemo, useState } from 'react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { ForgotPasswordDto } from '@gitroom/nestjs-libraries/dtos/auth/forgot.password.dto';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { ForgotPasswordDto } from '@signalcast/nestjs-libraries/dtos/auth/forgot.password.dto';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 type Inputs = {
   email: string;
 };

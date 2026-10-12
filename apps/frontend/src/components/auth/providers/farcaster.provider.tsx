@@ -1,14 +1,14 @@
 'use client';
 
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { Button } from '@gitroom/react/form/button';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { Button } from '@signalcast/react/form/button';
 import copy from 'copy-to-clipboard';
-import Loading from '@gitroom/frontend/components/layout/loading';
+import Loading from '@signalcast/frontend/components/layout/loading';
 export const FarcasterProvider = () => {
   const fetch = useFetch();
   const modal = useModals();

@@ -1,16 +1,16 @@
 'use client';
 
 import React, { FC, Fragment, useCallback, useMemo, useState } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
 import { orderBy } from 'lodash';
 import clsx from 'clsx';
-import SafeImage from '@gitroom/react/helpers/safe.image';
-import { AddProviderComponent } from '@gitroom/frontend/components/launches/add.provider.component';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+import SafeImage from '@signalcast/react/helpers/safe.image';
+import { AddProviderComponent } from '@signalcast/frontend/components/launches/add.provider.component';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 import {
   AnyMcpClient,
   CopyButton,
@@ -21,8 +21,8 @@ import {
   McpClient,
   mcpClients,
   mcpConnectorUrls,
-} from '@gitroom/frontend/components/public-api/public.component';
-import { McpClientIcon } from '@gitroom/frontend/components/public-api/mcp.client.icons';
+} from '@signalcast/frontend/components/public-api/public.component';
+import { McpClientIcon } from '@signalcast/frontend/components/public-api/mcp.client.icons';
 
 interface OnboardingModalProps {
   onClose: () => void;

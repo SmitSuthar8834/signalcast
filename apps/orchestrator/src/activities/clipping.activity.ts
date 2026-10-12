@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Activity, ActivityMethod } from 'nestjs-temporal-core';
-import { ClippingService } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { ClippingService } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
 
 // An activity on main can never change its parameters, so every one takes a
 // single object of ids: the state lives on the clipping records, and a field

@@ -1,4 +1,4 @@
-import { OAuthAuthorize } from '@gitroom/frontend/components/oauth/authorize.component';
+import { OAuthAuthorize } from '@signalcast/frontend/components/oauth/authorize.component';
 import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';

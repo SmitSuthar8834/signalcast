@@ -1,13 +1,13 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
 import { User } from '@prisma/client';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { UsersService } from '@gitroom/nestjs-libraries/database/prisma/users/users.service';
-import { getCookieUrlFromDomain } from '@gitroom/helpers/subdomain/subdomain.management';
-import { HttpForbiddenException } from '@gitroom/nestjs-libraries/services/exception.filter';
-import { MastraService } from '@gitroom/nestjs-libraries/chat/mastra.service';
-import { setSentryUserContext } from '@gitroom/nestjs-libraries/sentry/initialize.sentry';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { UsersService } from '@signalcast/nestjs-libraries/database/prisma/users/users.service';
+import { getCookieUrlFromDomain } from '@signalcast/helpers/subdomain/subdomain.management';
+import { HttpForbiddenException } from '@signalcast/nestjs-libraries/services/exception.filter';
+import { MastraService } from '@signalcast/nestjs-libraries/chat/mastra.service';
+import { setSentryUserContext } from '@signalcast/nestjs-libraries/sentry/initialize.sentry';
 
 export const removeAuth = (res: Response) => {
   res.cookie('auth', '', {

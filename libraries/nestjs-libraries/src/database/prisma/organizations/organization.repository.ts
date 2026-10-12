@@ -1,10 +1,10 @@
-import { PrismaRepository } from '@gitroom/nestjs-libraries/database/prisma/prisma.service';
+import { PrismaRepository } from '@signalcast/nestjs-libraries/database/prisma/prisma.service';
 import { Role, ShortLinkPreference, SubscriptionTier } from '@prisma/client';
 import { Injectable } from '@nestjs/common';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { CreateOrgUserDto } from '@gitroom/nestjs-libraries/dtos/auth/create.org.user.dto';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { CreateOrgUserDto } from '@signalcast/nestjs-libraries/dtos/auth/create.org.user.dto';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 
 @Injectable()
 export class OrganizationRepository {

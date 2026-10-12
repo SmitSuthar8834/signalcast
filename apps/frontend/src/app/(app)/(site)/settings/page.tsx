@@ -1,9 +1,9 @@
-import { SettingsPopup } from '@gitroom/frontend/components/layout/settings.component';
+import { SettingsPopup } from '@signalcast/frontend/components/layout/settings.component';
 export const dynamic = 'force-dynamic';
 import { Metadata } from 'next';
-import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
+import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 export const metadata: Metadata = {
-  title: `${isGeneralServerSide() ? 'Signalcast' : 'Gitroom'} Settings`,
+  title: `${'Signalcast'} Settings`,
   description: '',
 };
 export default async function Index(props: {

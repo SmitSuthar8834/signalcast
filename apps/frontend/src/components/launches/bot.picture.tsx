@@ -1,15 +1,15 @@
 'use client';
 
-import { TopTitle } from '@gitroom/frontend/components/launches/helpers/top.title.component';
+import { TopTitle } from '@signalcast/frontend/components/launches/helpers/top.title.component';
 import React, { FC, FormEventHandler, useCallback, useState } from 'react';
-import { Integrations } from '@gitroom/frontend/components/launches/calendar.context';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { Input } from '@gitroom/react/form/input';
-import { Button } from '@gitroom/react/form/button';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { showMediaBox } from '@gitroom/frontend/components/media/media.component';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { Integrations } from '@signalcast/frontend/components/launches/calendar.context';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { Input } from '@signalcast/react/form/input';
+import { Button } from '@signalcast/react/form/button';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { showMediaBox } from '@signalcast/frontend/components/media/media.component';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 export const BotPicture: FC<{
   integration: Integrations;
   canChangeProfilePicture: boolean;

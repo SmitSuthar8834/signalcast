@@ -3,18 +3,18 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
 import {
   BadBody,
   SocialAbstract,
   ValidityMedia,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { TumblrDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/tumblr.dto';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { TumblrDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/tumblr.dto';
 import { Integration } from '@prisma/client';
 import FormDataUpload from 'form-data';
 import { lookup } from 'mime-types';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 const TUMBLR_API_URL = 'https://api.tumblr.com/v2';
 const TUMBLR_USER_AGENT = 'Signalcast/1.0 (+https://github.com/SmitSuthar8834/signalcast)';

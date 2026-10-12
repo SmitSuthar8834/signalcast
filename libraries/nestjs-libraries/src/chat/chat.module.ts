@@ -1,8 +1,8 @@
 import { Global, Module } from '@nestjs/common';
-import { LoadToolsService } from '@gitroom/nestjs-libraries/chat/load.tools.service';
-import { MastraService } from '@gitroom/nestjs-libraries/chat/mastra.service';
-import { toolList } from '@gitroom/nestjs-libraries/chat/tools/tool.list';
-import { McpRelayService } from '@gitroom/nestjs-libraries/chat/mcp.relay.service';
+import { LoadToolsService } from '@signalcast/nestjs-libraries/chat/load.tools.service';
+import { MastraService } from '@signalcast/nestjs-libraries/chat/mastra.service';
+import { toolList } from '@signalcast/nestjs-libraries/chat/tools/tool.list';
+import { McpRelayService } from '@signalcast/nestjs-libraries/chat/mcp.relay.service';
 
 @Global()
 @Module({

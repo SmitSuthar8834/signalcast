@@ -1,7 +1,7 @@
 import { Global, Module } from '@nestjs/common';
-import { ImagesSlides } from '@gitroom/nestjs-libraries/videos/images-slides/images.slides';
-import { VideoManager } from '@gitroom/nestjs-libraries/videos/video.manager';
-import { Seedance } from '@gitroom/nestjs-libraries/videos/seedance/seedance';
+import { ImagesSlides } from '@signalcast/nestjs-libraries/videos/images-slides/images.slides';
+import { VideoManager } from '@signalcast/nestjs-libraries/videos/video.manager';
+import { Seedance } from '@signalcast/nestjs-libraries/videos/seedance/seedance';
 
 @Global()
 @Module({

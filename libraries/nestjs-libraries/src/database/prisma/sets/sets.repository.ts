@@ -1,6 +1,6 @@
-import { PrismaRepository } from '@gitroom/nestjs-libraries/database/prisma/prisma.service';
+import { PrismaRepository } from '@signalcast/nestjs-libraries/database/prisma/prisma.service';
 import { Injectable } from '@nestjs/common';
-import { SetsDto } from '@gitroom/nestjs-libraries/dtos/sets/sets.dto';
+import { SetsDto } from '@signalcast/nestjs-libraries/dtos/sets/sets.dto';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()

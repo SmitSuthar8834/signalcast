@@ -5,9 +5,9 @@ import useSWR from 'swr';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
 import { capitalize } from 'lodash';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { Select } from '@gitroom/react/form/select';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { Select } from '@signalcast/react/form/select';
 
 interface Invoice {
   id: string;

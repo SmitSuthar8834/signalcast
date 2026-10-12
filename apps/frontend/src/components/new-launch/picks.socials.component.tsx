@@ -2,13 +2,13 @@
 
 import { FC } from 'react';
 import clsx from 'clsx';
-import SafeImage from '@gitroom/react/helpers/safe.image';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
+import SafeImage from '@signalcast/react/helpers/safe.image';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
 import { useShallow } from 'zustand/react/shallow';
-import { useExistingData } from '@gitroom/frontend/components/launches/helpers/use.existing.data';
-import ImageWithFallback from '@gitroom/react/helpers/image.with.fallback';
-import { Check } from '@gitroom/frontend/components/launches/tags.component';
-import { Integrations } from '@gitroom/frontend/components/launches/calendar.context';
+import { useExistingData } from '@signalcast/frontend/components/launches/helpers/use.existing.data';
+import ImageWithFallback from '@signalcast/react/helpers/image.with.fallback';
+import { Check } from '@signalcast/frontend/components/launches/tags.component';
+import { Integrations } from '@signalcast/frontend/components/launches/calendar.context';
 
 const PlatformBadge: FC<{ integration: Integrations }> = ({ integration }) => {
   return integration.identifier === 'youtube' ? (

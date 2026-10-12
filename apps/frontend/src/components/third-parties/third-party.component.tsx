@@ -1,13 +1,13 @@
 'use client';
 
-import ImageWithFallback from '@gitroom/react/helpers/image.with.fallback';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { ThirdPartyListComponent } from '@gitroom/frontend/components/third-parties/third-party.list.component';
+import ImageWithFallback from '@signalcast/react/helpers/image.with.fallback';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { ThirdPartyListComponent } from '@signalcast/frontend/components/third-parties/third-party.list.component';
 import React, { FC, useCallback, useState } from 'react';
 import useSWR from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
 
 export const ThirdPartyMenuComponent: FC<{
   reload: () => void;

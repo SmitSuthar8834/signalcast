@@ -9,36 +9,36 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { AddEditModalProps } from '@gitroom/frontend/components/new-launch/add.edit.modal';
+import { AddEditModalProps } from '@signalcast/frontend/components/new-launch/add.edit.modal';
 import clsx from 'clsx';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { PicksSocialsComponent } from '@gitroom/frontend/components/new-launch/picks.socials.component';
-import { EditorWrapper } from '@gitroom/frontend/components/new-launch/editor';
-import { SelectCurrent } from '@gitroom/frontend/components/new-launch/select.current';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { PicksSocialsComponent } from '@signalcast/frontend/components/new-launch/picks.socials.component';
+import { EditorWrapper } from '@signalcast/frontend/components/new-launch/editor';
+import { SelectCurrent } from '@signalcast/frontend/components/new-launch/select.current';
 import {
   Providers,
   ShowAllProviders,
-} from '@gitroom/frontend/components/new-launch/providers/show.all.providers';
-import { getProviderSettingsMeta } from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
-import { useExistingData } from '@gitroom/frontend/components/launches/helpers/use.existing.data';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
+} from '@signalcast/frontend/components/new-launch/providers/show.all.providers';
+import { getProviderSettingsMeta } from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
+import { useExistingData } from '@signalcast/frontend/components/launches/helpers/use.existing.data';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
 import {
   DatePicker,
   DatePickerPanel,
-} from '@gitroom/frontend/components/launches/helpers/date.picker';
+} from '@signalcast/frontend/components/launches/helpers/date.picker';
 import { useShallow } from 'zustand/react/shallow';
-import { RepeatComponent } from '@gitroom/frontend/components/launches/repeat.component';
-import { TagsComponent } from '@gitroom/frontend/components/launches/tags.component';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
+import { RepeatComponent } from '@signalcast/frontend/components/launches/repeat.component';
+import { TagsComponent } from '@signalcast/frontend/components/launches/tags.component';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
 import { capitalize } from 'lodash';
-import { SelectCustomer } from '@gitroom/frontend/components/launches/select.customer';
+import { SelectCustomer } from '@signalcast/frontend/components/launches/select.customer';
 import { CopilotPopup } from '@copilotkit/react-ui';
-import { DummyCodeComponent } from '@gitroom/frontend/components/new-launch/dummy.code.component';
-import { CreationMethodBadge } from '@gitroom/frontend/components/launches/creation.method.badge';
+import { DummyCodeComponent } from '@signalcast/frontend/components/new-launch/dummy.code.component';
+import { CreationMethodBadge } from '@signalcast/frontend/components/launches/creation.method.badge';
 import {
   SettingsIcon,
   SettingsOutlineIcon,
@@ -50,21 +50,21 @@ import {
   EyeIcon,
   TagIcon,
   RepeatIcon,
-} from '@gitroom/frontend/components/ui/icons';
+} from '@signalcast/frontend/components/ui/icons';
 import {
   MobileTopBar,
   MobileTopBarAction,
-} from '@gitroom/frontend/components/new-launch/mobile.top.bar';
+} from '@signalcast/frontend/components/new-launch/mobile.top.bar';
 import {
   BottomSheet,
   BottomSheetButton,
   BottomSheetHeader,
   BottomSheetRow,
-} from '@gitroom/frontend/components/ui/bottom.sheet.component';
-import { useHasScroll } from '@gitroom/frontend/components/ui/is.scroll.hook';
-import { useShortlinkPreference } from '@gitroom/frontend/components/settings/shortlink-preference.component';
+} from '@signalcast/frontend/components/ui/bottom.sheet.component';
+import { useHasScroll } from '@signalcast/frontend/components/ui/is.scroll.hook';
+import { useShortlinkPreference } from '@signalcast/frontend/components/settings/shortlink-preference.component';
 import dayjs from 'dayjs';
-import { Button } from '@gitroom/react/form/button';
+import { Button } from '@signalcast/react/form/button';
 import { useClickOutside } from '@mantine/hooks';
 
 export const ManageModal: FC<AddEditModalProps> = (props) => {

@@ -7,23 +7,23 @@ import {
   Post,
   UseFilters,
 } from '@nestjs/common';
-import { ioRedis } from '@gitroom/nestjs-libraries/redis/redis.service';
-import { ConnectIntegrationDto } from '@gitroom/nestjs-libraries/dtos/integrations/connect.integration.dto';
-import { IntegrationManager } from '@gitroom/nestjs-libraries/integrations/integration.manager';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
-import { CheckPolicies } from '@gitroom/backend/services/auth/permissions/permissions.ability';
+import { ioRedis } from '@signalcast/nestjs-libraries/redis/redis.service';
+import { ConnectIntegrationDto } from '@signalcast/nestjs-libraries/dtos/integrations/connect.integration.dto';
+import { IntegrationManager } from '@signalcast/nestjs-libraries/integrations/integration.manager';
+import { IntegrationService } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.service';
+import { CheckPolicies } from '@signalcast/backend/services/auth/permissions/permissions.ability';
 import { ApiTags } from '@nestjs/swagger';
-import { NotEnoughScopesFilter } from '@gitroom/nestjs-libraries/integrations/integration.missing.scopes';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { AuthTokenDetails } from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { NotEnoughScopes } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+import { NotEnoughScopesFilter } from '@signalcast/nestjs-libraries/integrations/integration.missing.scopes';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { AuthTokenDetails } from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { NotEnoughScopes } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import {
   AuthorizationActions,
   Sections,
-} from '@gitroom/backend/services/auth/permissions/permission.exception.class';
-import { RefreshIntegrationService } from '@gitroom/nestjs-libraries/integrations/refresh.integration.service';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+} from '@signalcast/backend/services/auth/permissions/permission.exception.class';
+import { RefreshIntegrationService } from '@signalcast/nestjs-libraries/integrations/refresh.integration.service';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 
 @ApiTags('Integrations')
 @Controller('/integrations')

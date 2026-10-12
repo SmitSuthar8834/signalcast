@@ -1,16 +1,16 @@
 'use client';
 
-import { useCalendar, ListStateFilter } from '@gitroom/frontend/components/launches/calendar.context';
+import { useCalendar, ListStateFilter } from '@signalcast/frontend/components/launches/calendar.context';
 import clsx from 'clsx';
 import dayjs from 'dayjs';
 import { useCallback, useState } from 'react';
-import { SelectCustomer } from '@gitroom/frontend/components/launches/select.customer';
-import { SelectChannels } from '@gitroom/frontend/components/launches/select.channels';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { SelectCustomer } from '@signalcast/frontend/components/launches/select.customer';
+import { SelectChannels } from '@signalcast/frontend/components/launches/select.channels';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import i18next from 'i18next';
-import { newDayjs } from '@gitroom/frontend/components/layout/set.timezone';
-import { BottomSheet } from '@gitroom/frontend/components/ui/bottom.sheet.component';
-import { FilterIcon } from '@gitroom/frontend/components/ui/icons';
+import { newDayjs } from '@signalcast/frontend/components/layout/set.timezone';
+import { BottomSheet } from '@signalcast/frontend/components/ui/bottom.sheet.component';
+import { FilterIcon } from '@signalcast/frontend/components/ui/icons';
 
 // Helper function to get start and end dates based on display type
 function getDateRange(

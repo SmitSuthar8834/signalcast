@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { ClippingService } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { ClippingService } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
 
 // The MCP clipping widget runs in the host's sandboxed iframe (a foreign origin
 // without our cookies), so it authenticates with a short-lived ticket that only

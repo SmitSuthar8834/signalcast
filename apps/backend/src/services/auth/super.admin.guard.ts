@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { Organization } from '@prisma/client';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
 
 @Injectable()
 export class SuperAdminGuard implements CanActivate {

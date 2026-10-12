@@ -3,10 +3,10 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { MoltbookDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/moltbook.dto';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { MoltbookDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/moltbook.dto';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
 

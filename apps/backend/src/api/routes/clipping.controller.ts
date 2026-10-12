@@ -1,9 +1,9 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Organization } from '@prisma/client';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
-import { ClippingService } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
-import { ClippingDto } from '@gitroom/nestjs-libraries/dtos/clipping/clipping.dto';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
+import { ClippingService } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { ClippingDto } from '@signalcast/nestjs-libraries/dtos/clipping/clipping.dto';
 
 @ApiTags('Clipping')
 @Controller('/clipping')

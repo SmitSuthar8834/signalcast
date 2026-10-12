@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
 
 const AuthenticationComponent = () => {
   const t = useT();

@@ -1,5 +1,5 @@
 import { ActivityFailure, proxyActivities, sleep } from '@temporalio/workflow';
-import { MediaActivity } from '@gitroom/orchestrator/activities/media.activity';
+import { MediaActivity } from '@signalcast/orchestrator/activities/media.activity';
 
 // Submitting is a plain POST with no idempotency key, so a retry after the
 // queue accepted the job would run it twice; one attempt, and a failure

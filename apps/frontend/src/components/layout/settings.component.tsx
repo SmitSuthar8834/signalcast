@@ -1,6 +1,6 @@
 'use client';
 
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
 import React, {
   FC,
   Ref,
@@ -10,30 +10,30 @@ import React, {
   useState,
 } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { showMediaBox } from '@gitroom/frontend/components/media/media.component';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { showMediaBox } from '@signalcast/frontend/components/media/media.component';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { UserDetailDto } from '@gitroom/nestjs-libraries/dtos/users/user.details.dto';
-import { useToaster } from '@gitroom/react/toaster/toaster';
+import { UserDetailDto } from '@signalcast/nestjs-libraries/dtos/users/user.details.dto';
+import { useToaster } from '@signalcast/react/toaster/toaster';
 import { useSWRConfig } from 'swr';
 import clsx from 'clsx';
-import { TeamsComponent } from '@gitroom/frontend/components/settings/teams.component';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { LogoutComponent } from '@gitroom/frontend/components/layout/logout.component';
+import { TeamsComponent } from '@signalcast/frontend/components/settings/teams.component';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { LogoutComponent } from '@signalcast/frontend/components/layout/logout.component';
 import { useSearchParams } from 'next/navigation';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { PublicComponent } from '@gitroom/frontend/components/public-api/public.component';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { PublicComponent } from '@signalcast/frontend/components/public-api/public.component';
 import Link from 'next/link';
-import { Webhooks } from '@gitroom/frontend/components/webhooks/webhooks';
-import { Sets } from '@gitroom/frontend/components/sets/sets';
-import { SignaturesComponent } from '@gitroom/frontend/components/settings/signatures.component';
-import { Autopost } from '@gitroom/frontend/components/autopost/autopost';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { SVGLine } from '@gitroom/frontend/components/launches/launches.component';
-import { GlobalSettings } from '@gitroom/frontend/components/settings/global.settings';
-import { AppsComponent } from '@gitroom/frontend/components/settings/apps.component';
-import { ThirdPartyComponent } from '@gitroom/frontend/components/third-parties/third-party.component';
-import { Plugs } from '@gitroom/frontend/components/plugs/plugs';
+import { Webhooks } from '@signalcast/frontend/components/webhooks/webhooks';
+import { Sets } from '@signalcast/frontend/components/sets/sets';
+import { SignaturesComponent } from '@signalcast/frontend/components/settings/signatures.component';
+import { Autopost } from '@signalcast/frontend/components/autopost/autopost';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { SVGLine } from '@signalcast/frontend/components/launches/launches.component';
+import { GlobalSettings } from '@signalcast/frontend/components/settings/global.settings';
+import { AppsComponent } from '@signalcast/frontend/components/settings/apps.component';
+import { ThirdPartyComponent } from '@signalcast/frontend/components/third-parties/third-party.component';
+import { Plugs } from '@signalcast/frontend/components/plugs/plugs';
 export const SettingsPopup: FC<{
   getRef?: Ref<any>;
 }> = (props) => {

@@ -3,11 +3,11 @@
 import React, { FC, ReactNode, useState } from 'react';
 import clsx from 'clsx';
 import { useClickOutside } from '@mantine/hooks';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import {
   ChevronLeftIcon,
   DropdownArrowIcon,
-} from '@gitroom/frontend/components/ui/icons';
+} from '@signalcast/frontend/components/ui/icons';
 
 export interface MobileTopBarAction {
   label: string;

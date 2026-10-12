@@ -5,22 +5,22 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
 import { Integration } from '@prisma/client';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { PinterestSettingsDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/pinterest.dto';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { PinterestSettingsDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/pinterest.dto';
 import FormData from 'form-data';
-import { timer } from '@gitroom/helpers/utils/timer';
+import { timer } from '@signalcast/helpers/utils/timer';
 import {
   BadBody,
   RefreshToken,
   SocialAbstract,
   ValidityMedia,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import dayjs from 'dayjs';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 // Travels through the workflow history between postPending, checkPostStatus
 // and finalizePost - keep it small JSON (the media id and the pin content).

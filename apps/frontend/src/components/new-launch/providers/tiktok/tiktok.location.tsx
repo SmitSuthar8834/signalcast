@@ -1,9 +1,9 @@
 'use client';
 
 import { FC, useCallback, useEffect, useState } from 'react';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { useCustomProviderFunction } from '@gitroom/frontend/components/launches/helpers/use.custom.provider.function';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { useCustomProviderFunction } from '@signalcast/frontend/components/launches/helpers/use.custom.provider.function';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 
 interface LocationResult {
   id: string;

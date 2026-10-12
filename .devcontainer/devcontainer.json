@@ -1,6 +1,6 @@
 {
-	"name": "Postiz Dev Container",
-	"image": "localhost/postiz-devcontainer",
+	"name": "Signalcast Dev Container",
+	"image": "localhost/signalcast-devcontainer",
 	"features": {},
 	"customizations": {
 		"vscode": {

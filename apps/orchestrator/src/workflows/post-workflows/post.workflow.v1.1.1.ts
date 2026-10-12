@@ -1,4 +1,4 @@
-import { PostActivity } from '@gitroom/orchestrator/activities/post.activity';
+import { PostActivity } from '@signalcast/orchestrator/activities/post.activity';
 import {
   ActivityFailure,
   ApplicationFailure,
@@ -11,14 +11,14 @@ import {
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
 import { capitalize, sortBy } from 'lodash';
-import { PostResponse } from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
+import { PostResponse } from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
 import {
   TimeoutFailure,
   TimeoutType,
   TypedSearchAttributes,
 } from '@temporalio/common';
-import { postId as postIdSearchParam } from '@gitroom/nestjs-libraries/temporal/temporal.search.attribute';
+import { postId as postIdSearchParam } from '@signalcast/nestjs-libraries/temporal/temporal.search.attribute';
 
 // The publishing activities heartbeat every 15s from their first line, so a
 // heartbeat timeout can only mean the worker never ran the activity at all.

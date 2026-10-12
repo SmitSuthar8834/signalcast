@@ -5,7 +5,7 @@ import {
   Req,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { PaymentService } from '@gitroom/nestjs-libraries/services/payment/payment.service';
+import { PaymentService } from '@signalcast/nestjs-libraries/services/payment/payment.service';
 
 @ApiTags('Stripe')
 @Controller('/stripe')

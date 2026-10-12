@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
 
 // The MCP upload widget runs in the host's sandboxed iframe (a foreign origin
 // without our cookies), so it authenticates with a short-lived ticket. It is

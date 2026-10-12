@@ -3,17 +3,17 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { WordpressDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/wordpress.dto';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { WordpressDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/wordpress.dto';
 import slugify from 'slugify';
 // import FormData from 'form-data';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import { string } from 'yup';
 
 const WORDPRESS_USER_AGENT = 'Signalcast/1.0 (+https://github.com/SmitSuthar8834/signalcast)';

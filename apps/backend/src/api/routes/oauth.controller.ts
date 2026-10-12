@@ -12,20 +12,20 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Throttle } from '@nestjs/throttler';
-import { OAuthService } from '@gitroom/nestjs-libraries/database/prisma/oauth/oauth.service';
-import { GetUserFromRequest } from '@gitroom/nestjs-libraries/user/user.from.request';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
+import { OAuthService } from '@signalcast/nestjs-libraries/database/prisma/oauth/oauth.service';
+import { GetUserFromRequest } from '@signalcast/nestjs-libraries/user/user.from.request';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
 import { User, Organization } from '@prisma/client';
 import {
   AuthorizeOAuthQueryDto,
   ApproveOAuthDto,
   AuthorizeSelfHostedDto,
-} from '@gitroom/nestjs-libraries/dtos/oauth/authorize-oauth.dto';
-import { TokenExchangeDto } from '@gitroom/nestjs-libraries/dtos/oauth/token-exchange.dto';
-import { RegisterClientDto } from '@gitroom/nestjs-libraries/dtos/oauth/register-client.dto';
-import { extractBasicCredentials } from '@gitroom/nestjs-libraries/chat/oauth-types';
-import { McpRelayService } from '@gitroom/nestjs-libraries/chat/mcp.relay.service';
-import { ThrottlerRealIpGuard } from '@gitroom/nestjs-libraries/throttler/throttler.provider';
+} from '@signalcast/nestjs-libraries/dtos/oauth/authorize-oauth.dto';
+import { TokenExchangeDto } from '@signalcast/nestjs-libraries/dtos/oauth/token-exchange.dto';
+import { RegisterClientDto } from '@signalcast/nestjs-libraries/dtos/oauth/register-client.dto';
+import { extractBasicCredentials } from '@signalcast/nestjs-libraries/chat/oauth-types';
+import { McpRelayService } from '@signalcast/nestjs-libraries/chat/mcp.relay.service';
+import { ThrottlerRealIpGuard } from '@signalcast/nestjs-libraries/throttler/throttler.provider';
 
 @ApiTags('OAuth')
 @Controller('/oauth')

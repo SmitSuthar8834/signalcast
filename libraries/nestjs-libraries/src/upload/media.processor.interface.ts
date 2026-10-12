@@ -1,4 +1,4 @@
-// Contract of the media normalization service (postiz-uploader schema/v1).
+// Contract of the media normalization service (upstream postiz-uploader schema/v1).
 // The service knows nothing about Signalcast: URLs in, metadata out.
 export interface MediaProcessorJob {
   version: 1;

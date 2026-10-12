@@ -1,14 +1,14 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { OAuthRepository } from '@gitroom/nestjs-libraries/database/prisma/oauth/oauth.repository';
-import { CreateOAuthAppDto } from '@gitroom/nestjs-libraries/dtos/oauth/create-oauth-app.dto';
-import { UpdateOAuthAppDto } from '@gitroom/nestjs-libraries/dtos/oauth/update-oauth-app.dto';
-import { RegisterClientDto } from '@gitroom/nestjs-libraries/dtos/oauth/register-client.dto';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { extractBearerToken } from '@gitroom/nestjs-libraries/chat/oauth-types';
+import { OAuthRepository } from '@signalcast/nestjs-libraries/database/prisma/oauth/oauth.repository';
+import { CreateOAuthAppDto } from '@signalcast/nestjs-libraries/dtos/oauth/create-oauth-app.dto';
+import { UpdateOAuthAppDto } from '@signalcast/nestjs-libraries/dtos/oauth/update-oauth-app.dto';
+import { RegisterClientDto } from '@signalcast/nestjs-libraries/dtos/oauth/register-client.dto';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { extractBearerToken } from '@signalcast/nestjs-libraries/chat/oauth-types';
 import { createHash } from 'crypto';
 import { OAuthApp } from '@prisma/client';
-import type { SelfHostedInstance } from '@gitroom/nestjs-libraries/chat/mcp.relay.service';
+import type { SelfHostedInstance } from '@signalcast/nestjs-libraries/chat/mcp.relay.service';
 
 const openAiOAuthClientId = () =>
   process.env.OPENAI_OAUTH_CLIENT_ID?.trim();

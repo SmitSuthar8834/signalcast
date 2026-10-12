@@ -13,7 +13,7 @@ import {
   Integrations,
   useCalendar,
   useNow,
-} from '@gitroom/frontend/components/launches/calendar.context';
+} from '@signalcast/frontend/components/launches/calendar.context';
 import dayjs from 'dayjs';
 import 'dayjs/locale/en';
 import 'dayjs/locale/he';
@@ -30,35 +30,35 @@ import 'dayjs/locale/ar';
 import 'dayjs/locale/tr';
 import 'dayjs/locale/vi';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
 import clsx from 'clsx';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { ExistingDataContextProvider } from '@gitroom/frontend/components/launches/helpers/use.existing.data';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { ExistingDataContextProvider } from '@signalcast/frontend/components/launches/helpers/use.existing.data';
 import { useDrag, useDrop } from 'react-dnd';
 import { Integration, Post, State, Tags } from '@prisma/client';
-import { useAddProvider } from '@gitroom/frontend/components/launches/add.provider.component';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
+import { useAddProvider } from '@signalcast/frontend/components/launches/add.provider.component';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import { groupBy, sortBy } from 'lodash';
-import SafeImage from '@gitroom/react/helpers/safe.image';
+import SafeImage from '@signalcast/react/helpers/safe.image';
 import { extend } from 'dayjs';
 import { isUSCitizen } from './helpers/isuscitizen.utils';
-import { StatisticsModal } from '@gitroom/frontend/components/launches/statistics';
-import { MissingReleaseModal } from '@gitroom/frontend/components/launches/missing-release.modal';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { StatisticsModal } from '@signalcast/frontend/components/launches/statistics';
+import { MissingReleaseModal } from '@signalcast/frontend/components/launches/missing-release.modal';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import i18next from 'i18next';
-import { AddEditModal } from '@gitroom/frontend/components/new-launch/add.edit.modal';
-import { CreationMethodBadge } from '@gitroom/frontend/components/launches/creation.method.badge';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+import { AddEditModal } from '@signalcast/frontend/components/new-launch/add.edit.modal';
+import { CreationMethodBadge } from '@signalcast/frontend/components/launches/creation.method.badge';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 import copy from 'copy-to-clipboard';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { newDayjs } from '@gitroom/frontend/components/layout/set.timezone';
-import { Button } from '@gitroom/react/form/button';
-import { ChevronUpIcon } from '@gitroom/frontend/components/ui/icons';
+import { stripHtmlValidation } from '@signalcast/helpers/utils/strip.html.validation';
+import { newDayjs } from '@signalcast/frontend/components/layout/set.timezone';
+import { Button } from '@signalcast/react/form/button';
+import { ChevronUpIcon } from '@signalcast/frontend/components/ui/icons';
 
 // Extend dayjs with necessary plugins
 extend(isSameOrAfter);

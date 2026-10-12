@@ -4,18 +4,18 @@ import { FC, RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import {
   SelectedIntegrations,
   useLaunchStore,
-} from '@gitroom/frontend/components/new-launch/store';
+} from '@signalcast/frontend/components/new-launch/store';
 import clsx from 'clsx';
-import SafeImage from '@gitroom/react/helpers/safe.image';
+import SafeImage from '@signalcast/react/helpers/safe.image';
 import { useShallow } from 'zustand/react/shallow';
-import { GlobalIcon } from '@gitroom/frontend/components/ui/icons';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { Integrations } from '@gitroom/frontend/components/launches/calendar.context';
-import { useExistingData } from '@gitroom/frontend/components/launches/helpers/use.existing.data';
+import { GlobalIcon } from '@signalcast/frontend/components/ui/icons';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { Integrations } from '@signalcast/frontend/components/launches/calendar.context';
+import { useExistingData } from '@signalcast/frontend/components/launches/helpers/use.existing.data';
 import {
   useDecisionModal,
   useModals,
-} from '@gitroom/frontend/components/layout/new-modal';
+} from '@signalcast/frontend/components/layout/new-modal';
 
 export function useHasScroll(ref: RefObject<HTMLElement | null>): boolean {
   const [hasHorizontalScroll, setHasHorizontalScroll] = useState(false);

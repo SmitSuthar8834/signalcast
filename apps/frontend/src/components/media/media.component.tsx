@@ -11,30 +11,30 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Button } from '@gitroom/react/form/button';
+import { Button } from '@signalcast/react/form/button';
 import useSWR from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 import { Media } from '@prisma/client';
-import { useMediaDirectory } from '@gitroom/react/helpers/use.media.directory';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
+import { useMediaDirectory } from '@signalcast/react/helpers/use.media.directory';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
 import EventEmitter from 'events';
-import { useToaster } from '@gitroom/react/toaster/toaster';
+import { useToaster } from '@signalcast/react/toaster/toaster';
 import clsx from 'clsx';
-import { VideoFrame } from '@gitroom/react/helpers/video.frame';
-import { useUppyUploader } from '@gitroom/frontend/components/media/new.uploader';
+import { VideoFrame } from '@signalcast/react/helpers/video.frame';
+import { useUppyUploader } from '@signalcast/frontend/components/media/new.uploader';
 import dynamic from 'next/dynamic';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { AiImage } from '@gitroom/frontend/components/launches/ai.image';
-import { DropFiles } from '@gitroom/frontend/components/layout/drop.files';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { ThirdPartyMedia } from '@gitroom/frontend/components/third-parties/third-party.media';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { AiImage } from '@signalcast/frontend/components/launches/ai.image';
+import { DropFiles } from '@signalcast/frontend/components/layout/drop.files';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { ThirdPartyMedia } from '@signalcast/frontend/components/third-parties/third-party.media';
 import { ReactSortable } from 'react-sortablejs';
-import { MediaComponentInner } from '@gitroom/frontend/components/launches/helpers/media.settings.component';
-import { AiVideo } from '@gitroom/frontend/components/launches/ai.video';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { ThirdPartyMediaLibrary } from '@gitroom/frontend/components/third-parties/third-party.media-library';
+import { MediaComponentInner } from '@signalcast/frontend/components/launches/helpers/media.settings.component';
+import { AiVideo } from '@signalcast/frontend/components/launches/ai.video';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { ThirdPartyMediaLibrary } from '@signalcast/frontend/components/third-parties/third-party.media-library';
 import { Dashboard } from '@uppy/react';
 import {
   ChevronLeftIcon,
@@ -49,13 +49,13 @@ import {
   VerticalDividerIcon,
   NoMediaIcon,
   TrashIcon,
-} from '@gitroom/frontend/components/ui/icons';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
+} from '@signalcast/frontend/components/ui/icons';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
 import { useShallow } from 'zustand/react/shallow';
-import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
+import { LoadingComponent } from '@signalcast/frontend/components/layout/loading';
 import { useDebounce } from 'use-debounce';
 const Polonto = dynamic(
-  () => import('@gitroom/frontend/components/launches/polonto')
+  () => import('@signalcast/frontend/components/launches/polonto')
 );
 const showModalEmitter = new EventEmitter();
 // on phones the media library takes the whole screen

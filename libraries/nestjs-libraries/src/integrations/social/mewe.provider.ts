@@ -3,15 +3,15 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { MeweDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/mewe.dto';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { MeweDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/mewe.dto';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 export class MeweProvider extends SocialAbstract implements SocialProvider {
   identifier = 'mewe';

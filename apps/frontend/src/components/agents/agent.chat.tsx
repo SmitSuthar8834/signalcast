@@ -15,8 +15,8 @@ import {
   InputProps,
   UserMessageProps,
 } from '@copilotkit/react-ui';
-import { Input } from '@gitroom/frontend/components/agents/agent.input';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
+import { Input } from '@signalcast/frontend/components/agents/agent.input';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
 import {
   CopilotKit,
   useCopilotAction,
@@ -25,20 +25,20 @@ import {
 import {
   MediaPortal,
   PropertiesContext,
-} from '@gitroom/frontend/components/agents/agent';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+} from '@signalcast/frontend/components/agents/agent';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 import { useParams } from 'next/navigation';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import {
   Message as CopilotMessage,
   TextMessage,
 } from '@copilotkit/runtime-client-gql';
-import { AddEditModal } from '@gitroom/frontend/components/new-launch/add.edit.modal';
+import { AddEditModal } from '@signalcast/frontend/components/new-launch/add.edit.modal';
 import dayjs from 'dayjs';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { ExistingDataContextProvider } from '@gitroom/frontend/components/launches/helpers/use.existing.data';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { ExistingDataContextProvider } from '@signalcast/frontend/components/launches/helpers/use.existing.data';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 export const AgentChat: FC = () => {
   const { backendUrl } = useVariables();
@@ -53,7 +53,7 @@ export const AgentChat: FC = () => {
       runtimeUrl={backendUrl + '/copilot/agent'}
       useSingleEndpoint={true}
       showDevConsole={false}
-      agent="postiz"
+      agent="signalcast"
       properties={{
         integrations: properties,
       }}

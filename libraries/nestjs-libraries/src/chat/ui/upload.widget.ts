@@ -1,4 +1,4 @@
-import { getMaxSize } from '@gitroom/nestjs-libraries/upload/custom.upload.validation';
+import { getMaxSize } from '@signalcast/nestjs-libraries/upload/custom.upload.validation';
 
 const megabytes = (mime: string) => Math.floor(getMaxSize(mime) / 1024 / 1024);
 

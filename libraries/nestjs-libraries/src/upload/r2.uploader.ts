@@ -13,8 +13,8 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { Request, Response } from 'express';
 import crypto from 'crypto';
 import path from 'path';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fileTypeFromBuffer } = require('file-type');
 

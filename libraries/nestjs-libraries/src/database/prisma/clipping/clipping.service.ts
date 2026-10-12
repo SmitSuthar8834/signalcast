@@ -2,33 +2,33 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { Organization } from '@prisma/client';
 import { ApplicationFailure, TypedSearchAttributes } from '@temporalio/common';
 import { TemporalService } from 'nestjs-temporal-core';
-import { ClippingRepository } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.repository';
-import { ClippingDto } from '@gitroom/nestjs-libraries/dtos/clipping/clipping.dto';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
+import { ClippingRepository } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.repository';
+import { ClippingDto } from '@signalcast/nestjs-libraries/dtos/clipping/clipping.dto';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
 import {
   ClippingTranscript,
   ClippingWord,
   ProcessorFailure,
-} from '@gitroom/nestjs-libraries/upload/clipping.processor.interface';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
-import { PostsService } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.service';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
-import { OpenaiService } from '@gitroom/nestjs-libraries/openai/openai.service';
-import { DeepgramService } from '@gitroom/nestjs-libraries/deepgram/deepgram.service';
-import { organizationId } from '@gitroom/nestjs-libraries/temporal/temporal.search.attribute';
-import { truncateForTemporal } from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
+} from '@signalcast/nestjs-libraries/upload/clipping.processor.interface';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { IntegrationService } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.service';
+import { PostsService } from '@signalcast/nestjs-libraries/database/prisma/posts/posts.service';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
+import { OpenaiService } from '@signalcast/nestjs-libraries/openai/openai.service';
+import { DeepgramService } from '@signalcast/nestjs-libraries/deepgram/deepgram.service';
+import { organizationId } from '@signalcast/nestjs-libraries/temporal/temporal.search.attribute';
+import { truncateForTemporal } from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
 import { randomBytes } from 'crypto';
-import { ioRedis } from '@gitroom/nestjs-libraries/redis/redis.service';
-import { timer } from '@gitroom/helpers/utils/timer';
+import { ioRedis } from '@signalcast/nestjs-libraries/redis/redis.service';
+import { timer } from '@signalcast/helpers/utils/timer';
 import dayjs from 'dayjs';
 import {
   AuthorizationActions,
   Sections,
   SubscriptionException,
-} from '@gitroom/backend/services/auth/permissions/permission.exception.class';
+} from '@signalcast/backend/services/auth/permissions/permission.exception.class';
 
 // A reason retrying can't change (private video, no minutes left, no speech):
 // the workflow stops and the message is what the customer reads

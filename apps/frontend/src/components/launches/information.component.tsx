@@ -1,14 +1,14 @@
 'use client';
 
 import React, { FC, Fragment, useCallback, useMemo } from 'react';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
 import { useShallow } from 'zustand/react/shallow';
 import clsx from 'clsx';
-import SafeImage from '@gitroom/react/helpers/safe.image';
+import SafeImage from '@signalcast/react/helpers/safe.image';
 import { capitalize } from 'lodash';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { hasLinks } from '@gitroom/helpers/utils/strip.links';
-import { countLength } from '@gitroom/helpers/utils/count.length';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { hasLinks } from '@signalcast/helpers/utils/strip.links';
+import { countLength } from '@signalcast/helpers/utils/count.length';
 
 const Valid: FC = () => {
   return (

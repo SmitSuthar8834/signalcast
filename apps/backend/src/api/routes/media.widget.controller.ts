@@ -11,9 +11,9 @@ import { Request } from 'express';
 import { ApiTags } from '@nestjs/swagger';
 import { Organization } from '@prisma/client';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
-import { streamUploadOptions } from '@gitroom/nestjs-libraries/upload/multer.stream.engine';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
+import { streamUploadOptions } from '@signalcast/nestjs-libraries/upload/multer.stream.engine';
 
 @ApiTags('Media')
 @Controller('/media-widget')

@@ -1,12 +1,12 @@
 'use client';
 
 import { FC, ReactNode, useCallback } from 'react';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { MenuItem } from '@gitroom/frontend/components/new-layout/menu-item';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { AgentMediaModal } from '@gitroom/frontend/components/layout/agent.media.modal';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { MenuItem } from '@signalcast/frontend/components/new-layout/menu-item';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { AgentMediaModal } from '@signalcast/frontend/components/layout/agent.media.modal';
 
 interface MenuItemInterface {
   name: string;
@@ -272,7 +272,7 @@ export const useMenuItem = () => {
           />
         </svg>
       ),
-      path: 'https://affiliate.postiz.com',
+      path: 'https://github.com/SmitSuthar8834/signalcast',
       role: ['ADMIN', 'SUPERADMIN', 'USER'],
       requireBilling: true,
       hide: true,

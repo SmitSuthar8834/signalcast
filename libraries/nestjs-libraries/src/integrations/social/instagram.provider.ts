@@ -5,22 +5,22 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { timer } from '@gitroom/helpers/utils/timer';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { timer } from '@signalcast/helpers/utils/timer';
 import dayjs from 'dayjs';
 import {
   BadBody,
   Disconnect,
   SocialAbstract,
   ValidityMedia,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { InstagramDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/instagram.dto';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { InstagramDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/instagram.dto';
 import { Integration } from '@prisma/client';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
-import { META_GRAPH_API_VERSION } from '@gitroom/nestjs-libraries/integrations/social/facebook.provider';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
+import { META_GRAPH_API_VERSION } from '@signalcast/nestjs-libraries/integrations/social/facebook.provider';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 @Rules(
   "Instagram should have at least one attachment, if it's a story, it can have only one picture"

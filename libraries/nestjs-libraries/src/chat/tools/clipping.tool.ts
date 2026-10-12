@@ -1,11 +1,11 @@
-import { AgentToolInterface } from '@gitroom/nestjs-libraries/chat/agent.tool.interface';
+import { AgentToolInterface } from '@signalcast/nestjs-libraries/chat/agent.tool.interface';
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { HttpException, Injectable } from '@nestjs/common';
-import { ClippingService } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
-import { checkAuth } from '@gitroom/nestjs-libraries/chat/auth.context';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
-import { CLIPPING_WIDGET_URI } from '@gitroom/nestjs-libraries/chat/ui/clipping.widget';
+import { ClippingService } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { checkAuth } from '@signalcast/nestjs-libraries/chat/auth.context';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
+import { CLIPPING_WIDGET_URI } from '@signalcast/nestjs-libraries/chat/ui/clipping.widget';
 
 @Injectable()
 export class ClippingTool implements AgentToolInterface {

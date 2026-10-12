@@ -1,11 +1,11 @@
 import { HttpException, Injectable, Logger } from '@nestjs/common';
-import { UsersRepository } from '@gitroom/nestjs-libraries/database/prisma/users/users.repository';
+import { UsersRepository } from '@signalcast/nestjs-libraries/database/prisma/users/users.repository';
 import { Provider, Role } from '@prisma/client';
-import { UserDetailDto } from '@gitroom/nestjs-libraries/dtos/users/user.details.dto';
-import { EmailNotificationsDto } from '@gitroom/nestjs-libraries/dtos/users/email-notifications.dto';
-import { OrganizationRepository } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.repository';
-import { IntegrationRepository } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.repository';
-import { NotificationService } from '@gitroom/nestjs-libraries/database/prisma/notifications/notification.service';
+import { UserDetailDto } from '@signalcast/nestjs-libraries/dtos/users/user.details.dto';
+import { EmailNotificationsDto } from '@signalcast/nestjs-libraries/dtos/users/email-notifications.dto';
+import { OrganizationRepository } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.repository';
+import { IntegrationRepository } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.repository';
+import { NotificationService } from '@signalcast/nestjs-libraries/database/prisma/notifications/notification.service';
 
 @Injectable()
 export class UsersService {

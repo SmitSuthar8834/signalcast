@@ -2,9 +2,9 @@
 
 import { FC, useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { Logo } from '@gitroom/frontend/components/new-layout/logo';
-import { OAuthSelfHosted } from '@gitroom/frontend/components/oauth/self.hosted.component';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { Logo } from '@signalcast/frontend/components/new-layout/logo';
+import { OAuthSelfHosted } from '@signalcast/frontend/components/oauth/self.hosted.component';
 
 export const OAuthAuthorize: FC<{ logged: boolean }> = ({ logged }) => {
   const searchParams = useSearchParams();

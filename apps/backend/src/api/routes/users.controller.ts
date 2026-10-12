@@ -8,33 +8,33 @@ import {
   Req,
   Res,
 } from '@nestjs/common';
-import { GetUserFromRequest } from '@gitroom/nestjs-libraries/user/user.from.request';
+import { GetUserFromRequest } from '@signalcast/nestjs-libraries/user/user.from.request';
 import { sign } from 'jsonwebtoken';
 import { Organization, User } from '@prisma/client';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
-import { PaymentService } from '@gitroom/nestjs-libraries/services/payment/payment.service';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
+import { PaymentService } from '@signalcast/nestjs-libraries/services/payment/payment.service';
 import { Response, Request } from 'express';
-import { AuthService } from '@gitroom/backend/services/auth/auth.service';
-import { AuthService as AuthChecker } from '@gitroom/helpers/auth/auth.service';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { CheckPolicies } from '@gitroom/backend/services/auth/permissions/permissions.ability';
-import { getCookieUrlFromDomain } from '@gitroom/helpers/subdomain/subdomain.management';
-import { pricing } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/pricing';
+import { AuthService } from '@signalcast/backend/services/auth/auth.service';
+import { AuthService as AuthChecker } from '@signalcast/helpers/auth/auth.service';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { CheckPolicies } from '@signalcast/backend/services/auth/permissions/permissions.ability';
+import { getCookieUrlFromDomain } from '@signalcast/helpers/subdomain/subdomain.management';
+import { pricing } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/pricing';
 import { ApiTags } from '@nestjs/swagger';
-import { UsersService } from '@gitroom/nestjs-libraries/database/prisma/users/users.service';
-import { UserDetailDto } from '@gitroom/nestjs-libraries/dtos/users/user.details.dto';
-import { EmailNotificationsDto } from '@gitroom/nestjs-libraries/dtos/users/email-notifications.dto';
-import { HttpForbiddenException } from '@gitroom/nestjs-libraries/services/exception.filter';
+import { UsersService } from '@signalcast/nestjs-libraries/database/prisma/users/users.service';
+import { UserDetailDto } from '@signalcast/nestjs-libraries/dtos/users/user.details.dto';
+import { EmailNotificationsDto } from '@signalcast/nestjs-libraries/dtos/users/email-notifications.dto';
+import { HttpForbiddenException } from '@signalcast/nestjs-libraries/services/exception.filter';
 import { RealIP } from 'nestjs-real-ip';
-import { UserAgent } from '@gitroom/nestjs-libraries/user/user.agent';
-import { TrackEnum } from '@gitroom/nestjs-libraries/user/track.enum';
-import { TrackService } from '@gitroom/nestjs-libraries/track/track.service';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
+import { UserAgent } from '@signalcast/nestjs-libraries/user/user.agent';
+import { TrackEnum } from '@signalcast/nestjs-libraries/user/track.enum';
+import { TrackService } from '@signalcast/nestjs-libraries/track/track.service';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
 import {
   AuthorizationActions,
   Sections,
-} from '@gitroom/backend/services/auth/permissions/permission.exception.class';
+} from '@signalcast/backend/services/auth/permissions/permission.exception.class';
 
 @ApiTags('User')
 @Controller('/user')

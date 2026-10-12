@@ -1,9 +1,9 @@
 export const dynamic = 'force-dynamic';
-import { BillingComponent } from '@gitroom/frontend/components/billing/billing.component';
+import { BillingComponent } from '@signalcast/frontend/components/billing/billing.component';
 import { Metadata } from 'next';
-import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
+import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
 export const metadata: Metadata = {
-  title: `${isGeneralServerSide() ? 'Signalcast' : 'Gitroom'} Billing`,
+  title: `${'Signalcast'} Billing`,
   description: '',
 };
 export default async function Page() {

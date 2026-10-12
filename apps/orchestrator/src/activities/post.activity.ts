@@ -4,34 +4,34 @@ import {
   ActivityMethod,
   TemporalService,
 } from 'nestjs-temporal-core';
-import { PostsService } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.service';
+import { PostsService } from '@signalcast/nestjs-libraries/database/prisma/posts/posts.service';
 import {
   NotificationService,
   NotificationType,
-} from '@gitroom/nestjs-libraries/database/prisma/notifications/notification.service';
+} from '@signalcast/nestjs-libraries/database/prisma/notifications/notification.service';
 import { Integration, Post, State } from '@prisma/client';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { IntegrationManager } from '@gitroom/nestjs-libraries/integrations/integration.manager';
-import { AuthTokenDetails } from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { RefreshIntegrationService } from '@gitroom/nestjs-libraries/integrations/refresh.integration.service';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
-import { WebhooksService } from '@gitroom/nestjs-libraries/database/prisma/webhooks/webhooks.service';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { stripHtmlValidation } from '@signalcast/helpers/utils/strip.html.validation';
+import { IntegrationManager } from '@signalcast/nestjs-libraries/integrations/integration.manager';
+import { AuthTokenDetails } from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { RefreshIntegrationService } from '@signalcast/nestjs-libraries/integrations/refresh.integration.service';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { IntegrationService } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.service';
+import { WebhooksService } from '@signalcast/nestjs-libraries/database/prisma/webhooks/webhooks.service';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import { TypedSearchAttributes } from '@temporalio/common';
 import {
   organizationId,
   postId as postIdSearchParam,
-} from '@gitroom/nestjs-libraries/temporal/temporal.search.attribute';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+} from '@signalcast/nestjs-libraries/temporal/temporal.search.attribute';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
 import {
   setHeartbeatDetails,
   withHeartbeat,
-} from '@gitroom/nestjs-libraries/temporal/temporal.heartbeat';
+} from '@signalcast/nestjs-libraries/temporal/temporal.heartbeat';
 import {
   BadBody,
   Disconnect,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
 
 // Drops fields the workflow and downstream activities never read — biggest wins are `error` (grows per retry) and `childrenPost` (Prisma side-loads it on every recursive row).
 function slimPost(post: any) {

@@ -1,10 +1,10 @@
 import { HttpStatus, Injectable, Logger, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { Organization } from '@prisma/client';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { OAuthService } from '@gitroom/nestjs-libraries/database/prisma/oauth/oauth.service';
-import { HttpForbiddenException } from '@gitroom/nestjs-libraries/services/exception.filter';
-import { setSentryUserContext } from '@gitroom/nestjs-libraries/sentry/initialize.sentry';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { OAuthService } from '@signalcast/nestjs-libraries/database/prisma/oauth/oauth.service';
+import { HttpForbiddenException } from '@signalcast/nestjs-libraries/services/exception.filter';
+import { setSentryUserContext } from '@signalcast/nestjs-libraries/sentry/initialize.sentry';
 
 @Injectable()
 export class PublicAuthMiddleware implements NestMiddleware {
@@ -66,13 +66,13 @@ export class PublicAuthMiddleware implements NestMiddleware {
 
       this.setOrg(req, org);
       const includeDeleted =
-        (req.headers['x-postiz-include-deleted'] as string)?.trim() === 'true';
+        ((req.headers['x-signalcast-include-deleted'] ?? req.headers['x-postiz-include-deleted']) as string)?.trim() === 'true';
       // @ts-ignore
       req.authOrgId = org.id;
       // @ts-ignore
       req.includeDeleted = includeDeleted;
 
-      const overrideOrgId = (req.headers['x-postiz-org'] as string)?.trim();
+      const overrideOrgId = ((req.headers['x-signalcast-org'] ?? req.headers['x-postiz-org']) as string)?.trim();
 
       if (overrideOrgId) {
         if (

@@ -6,8 +6,8 @@ import {
   proxyActivities,
   sleep,
 } from '@temporalio/workflow';
-import { ClippingActivity } from '@gitroom/orchestrator/activities/clipping.activity';
-import type { ClippingJobState } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { ClippingActivity } from '@signalcast/orchestrator/activities/clipping.activity';
+import type { ClippingJobState } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
 
 // Submitting is a plain POST with no idempotency key. A retry after the queue
 // accepted the job runs it twice, which only costs the second job: both write

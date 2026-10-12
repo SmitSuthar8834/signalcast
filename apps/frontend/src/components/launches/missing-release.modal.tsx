@@ -2,13 +2,13 @@
 
 import React, { FC, useCallback, useState } from 'react';
 import useSWR from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { Button } from '@gitroom/react/form/button';
-import { StatisticsModal } from '@gitroom/frontend/components/launches/statistics';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { LoadingComponent } from '@signalcast/frontend/components/layout/loading';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { Button } from '@signalcast/react/form/button';
+import { StatisticsModal } from '@signalcast/frontend/components/launches/statistics';
 
 export const MissingReleaseModal: FC<{
   postId: string;

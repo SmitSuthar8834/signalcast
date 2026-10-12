@@ -1,10 +1,10 @@
 'use client';
 
 import React, { ReactNode, useCallback, useEffect, useState } from 'react';
-import { Logo } from '@gitroom/frontend/components/new-layout/logo';
+import { Logo } from '@signalcast/frontend/components/new-layout/logo';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 const ModeComponent = dynamic(
-  () => import('@gitroom/frontend/components/layout/mode.component'),
+  () => import('@signalcast/frontend/components/layout/mode.component'),
   {
     ssr: false,
   }
@@ -12,37 +12,37 @@ const ModeComponent = dynamic(
 
 import clsx from 'clsx';
 import dynamic from 'next/dynamic';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 import { usePathname, useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
-import { CheckPayment } from '@gitroom/frontend/components/layout/check.payment';
-import { ToolTip } from '@gitroom/frontend/components/layout/top.tip';
-import { ShowMediaBoxModal } from '@gitroom/frontend/components/media/media.component';
-import { ShowLinkedinCompany } from '@gitroom/frontend/components/launches/helpers/linkedin.component';
-import { MediaSettingsLayout } from '@gitroom/frontend/components/launches/helpers/media.settings.component';
-import { Toaster } from '@gitroom/react/toaster/toaster';
-import { ShowPostSelector } from '@gitroom/frontend/components/post-url-selector/post.url.selector';
-import { NewSubscription } from '@gitroom/frontend/components/layout/new.subscription';
-import { Support } from '@gitroom/frontend/components/layout/support';
-import { ContinueProvider } from '@gitroom/frontend/components/layout/continue.provider';
-import { ContextWrapper } from '@gitroom/frontend/components/layout/user.context';
+import { CheckPayment } from '@signalcast/frontend/components/layout/check.payment';
+import { ToolTip } from '@signalcast/frontend/components/layout/top.tip';
+import { ShowMediaBoxModal } from '@signalcast/frontend/components/media/media.component';
+import { ShowLinkedinCompany } from '@signalcast/frontend/components/launches/helpers/linkedin.component';
+import { MediaSettingsLayout } from '@signalcast/frontend/components/launches/helpers/media.settings.component';
+import { Toaster } from '@signalcast/react/toaster/toaster';
+import { ShowPostSelector } from '@signalcast/frontend/components/post-url-selector/post.url.selector';
+import { NewSubscription } from '@signalcast/frontend/components/layout/new.subscription';
+import { Support } from '@signalcast/frontend/components/layout/support';
+import { ContinueProvider } from '@signalcast/frontend/components/layout/continue.provider';
+import { ContextWrapper } from '@signalcast/frontend/components/layout/user.context';
 import { CopilotKit } from '@copilotkit/react-core';
-import { MantineWrapper } from '@gitroom/react/helpers/mantine.wrapper';
-import { Impersonate } from '@gitroom/frontend/components/layout/impersonate';
-import { AnnouncementBanner } from '@gitroom/frontend/components/layout/announcement.banner';
-import { Title } from '@gitroom/frontend/components/layout/title';
-import { TopMenu } from '@gitroom/frontend/components/layout/top.menu';
-import { LanguageComponent } from '@gitroom/frontend/components/layout/language.component';
-import { ChromeExtensionComponent } from '@gitroom/frontend/components/layout/chrome.extension.component';
-import NotificationComponent from '@gitroom/frontend/components/notifications/notification.component';
-import { OrganizationSelector } from '@gitroom/frontend/components/layout/organization.selector';
-import { StreakComponent } from '@gitroom/frontend/components/layout/streak.component';
-import { PreConditionComponent } from '@gitroom/frontend/components/layout/pre-condition.component';
-import { AttachToFeedbackIcon } from '@gitroom/frontend/components/new-layout/sentry.feedback.component';
-import { FirstBillingComponent } from '@gitroom/frontend/components/billing/first.billing.component';
-import { TrialTracker } from '@gitroom/frontend/components/layout/gtm.component';
-import { setSentryUser } from '@gitroom/react/sentry/initialize.sentry.client';
+import { MantineWrapper } from '@signalcast/react/helpers/mantine.wrapper';
+import { Impersonate } from '@signalcast/frontend/components/layout/impersonate';
+import { AnnouncementBanner } from '@signalcast/frontend/components/layout/announcement.banner';
+import { Title } from '@signalcast/frontend/components/layout/title';
+import { TopMenu } from '@signalcast/frontend/components/layout/top.menu';
+import { LanguageComponent } from '@signalcast/frontend/components/layout/language.component';
+import { ChromeExtensionComponent } from '@signalcast/frontend/components/layout/chrome.extension.component';
+import NotificationComponent from '@signalcast/frontend/components/notifications/notification.component';
+import { OrganizationSelector } from '@signalcast/frontend/components/layout/organization.selector';
+import { StreakComponent } from '@signalcast/frontend/components/layout/streak.component';
+import { PreConditionComponent } from '@signalcast/frontend/components/layout/pre-condition.component';
+import { AttachToFeedbackIcon } from '@signalcast/frontend/components/new-layout/sentry.feedback.component';
+import { FirstBillingComponent } from '@signalcast/frontend/components/billing/first.billing.component';
+import { TrialTracker } from '@signalcast/frontend/components/layout/gtm.component';
+import { setSentryUser } from '@signalcast/react/sentry/initialize.sentry.client';
 
 const jakartaSans = Plus_Jakarta_Sans({
   weight: ['600', '500', '700'],

@@ -1,11 +1,11 @@
 import { Body, Controller, Param, Post, Res } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { ioRedis } from '@gitroom/nestjs-libraries/redis/redis.service';
-import { IntegrationManager } from '@gitroom/nestjs-libraries/integrations/integration.manager';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
-import { PostsService } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.service';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { ioRedis } from '@signalcast/nestjs-libraries/redis/redis.service';
+import { IntegrationManager } from '@signalcast/nestjs-libraries/integrations/integration.manager';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { IntegrationService } from '@signalcast/nestjs-libraries/database/prisma/integrations/integration.service';
+import { PostsService } from '@signalcast/nestjs-libraries/database/prisma/posts/posts.service';
 
 @ApiTags('Enterprise')
 @Controller('/enterprise')

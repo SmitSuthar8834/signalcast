@@ -1,9 +1,9 @@
 import { createContext, FC, useCallback, useContext, useEffect } from 'react';
 import './providers/image-text-slides.provider';
 import './providers/seedance.provider';
-import { videosList } from '@gitroom/frontend/components/videos/video.wrapper';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
+import { videosList } from '@signalcast/frontend/components/videos/video.wrapper';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
 
 const VideoFunctionWrapper = createContext({
   identifier: '',

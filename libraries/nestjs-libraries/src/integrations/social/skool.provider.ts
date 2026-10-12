@@ -1,6 +1,6 @@
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 import { BadBody, SocialAbstract } from '../social.abstract';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import {
   AuthTokenDetails,
   MediaContent,
@@ -10,9 +10,9 @@ import {
 } from './social.integrations.interface';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
-import { SkoolDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/skool.dto';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
+import { SkoolDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/skool.dto';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
 
 export class SkoolProvider extends SocialAbstract implements SocialProvider {
   identifier = 'skool';

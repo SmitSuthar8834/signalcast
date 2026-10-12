@@ -4,22 +4,22 @@ import { FC, useCallback } from 'react';
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
-import { useIntegration } from '@gitroom/frontend/components/launches/helpers/use.integration';
-import { Subreddit } from '@gitroom/frontend/components/new-launch/providers/reddit/subreddit';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
+import { useIntegration } from '@signalcast/frontend/components/launches/helpers/use.integration';
+import { Subreddit } from '@signalcast/frontend/components/new-launch/providers/reddit/subreddit';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
 import { useFieldArray, useWatch } from 'react-hook-form';
-import { Button } from '@gitroom/react/form/button';
+import { Button } from '@signalcast/react/form/button';
 import {
   RedditSettingsDto,
   RedditSettingsValueDto,
-} from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/reddit.dto';
+} from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/reddit.dto';
 import clsx from 'clsx';
-import { useMediaDirectory } from '@gitroom/react/helpers/use.media.directory';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import SafeImage from '@gitroom/react/helpers/safe.image';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useFormatting } from '@gitroom/frontend/components/launches/helpers/use.formatting';
+import { useMediaDirectory } from '@signalcast/react/helpers/use.media.directory';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import SafeImage from '@signalcast/react/helpers/safe.image';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useFormatting } from '@signalcast/frontend/components/launches/helpers/use.formatting';
 const RenderRedditComponent: FC<{
   type: string;
   images?: Array<{

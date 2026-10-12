@@ -10,12 +10,12 @@ import { TavilySearch } from '@langchain/tavily';
 import { ToolNode } from '@langchain/langgraph/prebuilt';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import dayjs from 'dayjs';
-import { PostsService } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.service';
+import { PostsService } from '@signalcast/nestjs-libraries/database/prisma/posts/posts.service';
 import { z } from 'zod';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
-import { UploadFactory } from '@gitroom/nestjs-libraries/upload/upload.factory';
-import { GeneratorDto } from '@gitroom/nestjs-libraries/dtos/generator/generator.dto';
-import { generationError } from '@gitroom/nestjs-libraries/openai/generation.error';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
+import { UploadFactory } from '@signalcast/nestjs-libraries/upload/upload.factory';
+import { GeneratorDto } from '@signalcast/nestjs-libraries/dtos/generator/generator.dto';
+import { generationError } from '@signalcast/nestjs-libraries/openai/generation.error';
 
 const tools = !process.env.TAVILY_API_KEY
   ? []

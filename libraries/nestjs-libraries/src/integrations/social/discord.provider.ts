@@ -3,12 +3,12 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
+import { SocialAbstract } from '@signalcast/nestjs-libraries/integrations/social.abstract';
 import { Integration } from '@prisma/client';
-import { DiscordDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/discord.dto';
-import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
+import { DiscordDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/discord.dto';
+import { Tool } from '@signalcast/nestjs-libraries/integrations/tool.decorator';
 import FormDataUpload from 'form-data';
 
 export class DiscordProvider extends SocialAbstract implements SocialProvider {

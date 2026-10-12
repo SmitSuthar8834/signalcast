@@ -8,28 +8,28 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
 import { lookup } from 'mime-types';
 import sharp from 'sharp';
-import { setHeartbeatDetails } from '@gitroom/nestjs-libraries/temporal/temporal.heartbeat';
+import { setHeartbeatDetails } from '@signalcast/nestjs-libraries/temporal/temporal.heartbeat';
 import {
   BadBody,
   RefreshToken,
   SocialAbstract,
   stripQuery,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { Plug } from '@gitroom/helpers/decorators/plug.decorator';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { Plug } from '@signalcast/helpers/decorators/plug.decorator';
 import { Integration } from '@prisma/client';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { PostPlug } from '@gitroom/helpers/decorators/post.plug';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { PostPlug } from '@signalcast/helpers/decorators/post.plug';
 import dayjs from 'dayjs';
 import { uniqBy } from 'lodash';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { stripLinks as removeLinks } from '@gitroom/helpers/utils/strip.links';
-import { XDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/x.dto';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
-import { isAllowedUploadPath } from '@gitroom/helpers/utils/valid.url.path';
+import { stripHtmlValidation } from '@signalcast/helpers/utils/strip.html.validation';
+import { stripLinks as removeLinks } from '@signalcast/helpers/utils/strip.links';
+import { XDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/x.dto';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
+import { isAllowedUploadPath } from '@signalcast/helpers/utils/valid.url.path';
 
 // Travels through the workflow history between postPending, checkPostStatus
 // and finalizePost - keep it small JSON (media ids and the tweet content).

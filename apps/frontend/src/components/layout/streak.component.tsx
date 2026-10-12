@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, useMemo } from 'react';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
 
 export const StreakComponent: FC = () => {
   const user = useUser();

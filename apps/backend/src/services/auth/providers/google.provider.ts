@@ -3,7 +3,7 @@ import { HttpException } from '@nestjs/common';
 import {
   AuthProvider,
   AuthProviderAbstract,
-} from '@gitroom/backend/services/auth/providers.interface';
+} from '@signalcast/backend/services/auth/providers.interface';
 
 const defaultRedirect = () =>
   `${process.env.FRONTEND_URL}/integrations/social/youtube`;

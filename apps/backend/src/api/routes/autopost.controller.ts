@@ -8,14 +8,14 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
 import { Organization } from '@prisma/client';
 import { ApiTags } from '@nestjs/swagger';
-import { CheckPolicies } from '@gitroom/backend/services/auth/permissions/permissions.ability';
-import { AutopostService } from '@gitroom/nestjs-libraries/database/prisma/autopost/autopost.service';
-import { AutopostDto } from '@gitroom/nestjs-libraries/dtos/autopost/autopost.dto';
-import { AuthorizationActions, Sections } from '@gitroom/backend/services/auth/permissions/permission.exception.class';
-import { OnlyURL } from '@gitroom/nestjs-libraries/dtos/webhooks/webhooks.dto';
+import { CheckPolicies } from '@signalcast/backend/services/auth/permissions/permissions.ability';
+import { AutopostService } from '@signalcast/nestjs-libraries/database/prisma/autopost/autopost.service';
+import { AutopostDto } from '@signalcast/nestjs-libraries/dtos/autopost/autopost.dto';
+import { AuthorizationActions, Sections } from '@signalcast/backend/services/auth/permissions/permission.exception.class';
+import { OnlyURL } from '@signalcast/nestjs-libraries/dtos/webhooks/webhooks.dto';
 
 @ApiTags('Autopost')
 @Controller('/autopost')

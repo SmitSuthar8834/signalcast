@@ -1,24 +1,24 @@
-import { internalFetch } from '@gitroom/helpers/utils/internal.fetch';
-import { sanitizePostContent } from '@gitroom/helpers/utils/sanitize.post.content';
+import { internalFetch } from '@signalcast/helpers/utils/internal.fetch';
+import { sanitizePostContent } from '@signalcast/helpers/utils/sanitize.post.content';
 export const dynamic = 'force-dynamic';
 import { Metadata } from 'next';
-import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
-import SafeImage from '@gitroom/react/helpers/safe.image';
+import { isGeneralServerSide } from '@signalcast/helpers/utils/is.general.server.side';
+import SafeImage from '@signalcast/react/helpers/safe.image';
 import Link from 'next/link';
-import { CommentsComponents } from '@gitroom/frontend/components/preview/comments.components';
-import { PreviewCommentsProvider } from '@gitroom/frontend/components/preview/preview.comments.context';
-import { PostContentClient } from '@gitroom/frontend/components/preview/post.content.client';
+import { CommentsComponents } from '@signalcast/frontend/components/preview/comments.components';
+import { PreviewCommentsProvider } from '@signalcast/frontend/components/preview/preview.comments.context';
+import { PostContentClient } from '@signalcast/frontend/components/preview/post.content.client';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-import { VideoOrImage } from '@gitroom/react/helpers/video.or.image';
-import { CopyClient } from '@gitroom/frontend/components/preview/copy.client';
-import { getT } from '@gitroom/react/translation/get.translation.service.backend';
-import { RenderPreviewDateClient } from '@gitroom/frontend/components/preview/render.preview.date.client';
-import { CreationMethodBadge } from '@gitroom/frontend/components/launches/creation.method.badge';
+import { VideoOrImage } from '@signalcast/react/helpers/video.or.image';
+import { CopyClient } from '@signalcast/frontend/components/preview/copy.client';
+import { getT } from '@signalcast/react/translation/get.translation.service.backend';
+import { RenderPreviewDateClient } from '@signalcast/frontend/components/preview/render.preview.date.client';
+import { CreationMethodBadge } from '@signalcast/frontend/components/launches/creation.method.badge';
 
 dayjs.extend(utc);
 export const metadata: Metadata = {
-  title: `${isGeneralServerSide() ? 'Signalcast' : 'Gitroom'} Preview`,
+  title: `${'Signalcast'} Preview`,
   description: '',
 };
 export default async function Auth(
@@ -60,7 +60,7 @@ export default async function Auth(
             className="flex items-center gap-[10px] text-textColor"
           >
             <div className="w-[44px]">
-              <SafeImage src={'/postiz.svg'} width={44} height={44} alt="Logo" />
+              <SafeImage src={'/signalcast.svg'} width={44} height={44} alt="Logo" />
             </div>
             <div>
               <svg

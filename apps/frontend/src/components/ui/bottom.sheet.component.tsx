@@ -4,7 +4,7 @@ import React, { FC, ReactNode, useEffect } from 'react';
 import {
   ChevronRightIcon,
   CloseIcon,
-} from '@gitroom/frontend/components/ui/icons';
+} from '@signalcast/frontend/components/ui/icons';
 
 export const BottomSheetHeader: FC<{
   title: ReactNode;

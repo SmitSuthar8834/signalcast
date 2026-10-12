@@ -1,11 +1,11 @@
 import React, { FC, Fragment, useCallback, useMemo, useState } from 'react';
 import useSWR, { useSWRConfig } from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { ChartSocial } from '@gitroom/frontend/components/analytics/chart-social';
-import { Select } from '@gitroom/react/form/select';
-import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
-import { MissingReleaseModal } from '@gitroom/frontend/components/launches/missing-release.modal';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { ChartSocial } from '@signalcast/frontend/components/analytics/chart-social';
+import { Select } from '@signalcast/react/form/select';
+import { LoadingComponent } from '@signalcast/frontend/components/layout/loading';
+import { MissingReleaseModal } from '@signalcast/frontend/components/launches/missing-release.modal';
 
 interface AnalyticsData {
   label: string;

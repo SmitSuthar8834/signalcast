@@ -3,17 +3,17 @@
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
 import { FC } from 'react';
-import { Select } from '@gitroom/react/form/select';
-import { Checkbox } from '@gitroom/react/form/checkbox';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { InstagramDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/instagram.dto';
-import { InstagramCollaboratorsTags } from '@gitroom/frontend/components/new-launch/providers/instagram/instagram.tags';
-import { InstagramAudioSelector } from '@gitroom/frontend/components/new-launch/providers/instagram/instagram.audio';
-import { useIntegration } from '@gitroom/frontend/components/launches/helpers/use.integration';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { InstagramPreview } from '@gitroom/frontend/components/new-launch/providers/instagram/instagram.preview';
+import { Select } from '@signalcast/react/form/select';
+import { Checkbox } from '@signalcast/react/form/checkbox';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { InstagramDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/instagram.dto';
+import { InstagramCollaboratorsTags } from '@signalcast/frontend/components/new-launch/providers/instagram/instagram.tags';
+import { InstagramAudioSelector } from '@signalcast/frontend/components/new-launch/providers/instagram/instagram.audio';
+import { useIntegration } from '@signalcast/frontend/components/launches/helpers/use.integration';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { InstagramPreview } from '@signalcast/frontend/components/new-launch/providers/instagram/instagram.preview';
 const postType = [
   {
     value: 'post',

@@ -1,9 +1,9 @@
-import { AgentToolInterface } from '@gitroom/nestjs-libraries/chat/agent.tool.interface';
+import { AgentToolInterface } from '@signalcast/nestjs-libraries/chat/agent.tool.interface';
 import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { Injectable } from '@nestjs/common';
-import { MediaService } from '@gitroom/nestjs-libraries/database/prisma/media/media.service';
-import { checkAuth } from '@gitroom/nestjs-libraries/chat/auth.context';
+import { MediaService } from '@signalcast/nestjs-libraries/database/prisma/media/media.service';
+import { checkAuth } from '@signalcast/nestjs-libraries/chat/auth.context';
 
 // Meant for the upload widget itself: visibility "app" asks the host to keep it
 // away from the model, so the upload credential stays out of the conversation.

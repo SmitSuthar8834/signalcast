@@ -1,8 +1,8 @@
-import { initializeSentry } from '@gitroom/nestjs-libraries/sentry/initialize.sentry';
+import { initializeSentry } from '@signalcast/nestjs-libraries/sentry/initialize.sentry';
 initializeSentry('backend', true);
 import compression from 'compression';
 
-import { loadSwagger } from '@gitroom/helpers/swagger/load.swagger';
+import { loadSwagger } from '@signalcast/helpers/swagger/load.swagger';
 import { json } from 'express';
 import { Runtime } from '@temporalio/worker';
 Runtime.install({ shutdownSignals: [] });
@@ -14,11 +14,11 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
-import { SubscriptionExceptionFilter } from '@gitroom/backend/services/auth/permissions/subscription.exception';
-import { PostValidationExceptionFilter } from '@gitroom/backend/api/routes/posts.validation.exception';
-import { HttpExceptionFilter } from '@gitroom/nestjs-libraries/services/exception.filter';
-import { ConfigurationChecker } from '@gitroom/helpers/configuration/configuration.checker';
-import { startMcp } from '@gitroom/nestjs-libraries/chat/start.mcp';
+import { SubscriptionExceptionFilter } from '@signalcast/backend/services/auth/permissions/subscription.exception';
+import { PostValidationExceptionFilter } from '@signalcast/backend/api/routes/posts.validation.exception';
+import { HttpExceptionFilter } from '@signalcast/nestjs-libraries/services/exception.filter';
+import { ConfigurationChecker } from '@signalcast/helpers/configuration/configuration.checker';
+import { startMcp } from '@signalcast/nestjs-libraries/chat/start.mcp';
 
 async function start() {
   const app = await NestFactory.create(AppModule, {
@@ -31,6 +31,9 @@ async function start() {
         'auth',
         'showorg',
         'impersonate',
+        'x-signalcast-org',
+        'x-signalcast-include-deleted',
+        // legacy names, still accepted
         'x-postiz-org',
         'x-postiz-include-deleted',
         'x-copilotkit-runtime-client-gql-version',

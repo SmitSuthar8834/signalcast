@@ -2,10 +2,10 @@
 
 import { create } from 'zustand';
 import dayjs from 'dayjs';
-import { Integrations } from '@gitroom/frontend/components/launches/calendar.context';
+import { Integrations } from '@signalcast/frontend/components/launches/calendar.context';
 import { createRef, RefObject } from 'react';
-import { PostComment } from '@gitroom/frontend/components/new-launch/providers/post-comment.enum';
-import { newDayjs } from '@gitroom/frontend/components/layout/set.timezone';
+import { PostComment } from '@signalcast/frontend/components/new-launch/providers/post-comment.enum';
+import { newDayjs } from '@signalcast/frontend/components/layout/set.timezone';
 
 interface Values {
   id: string;

@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/nextjs';
-import { initializeSentryBasic } from '@gitroom/react/sentry/initialize.sentry.next.basic';
+import { initializeSentryBasic } from '@signalcast/react/sentry/initialize.sentry.next.basic';
 
 export const setSentryUser = (
   user?: { id: string; email?: string; orgId: string } | null

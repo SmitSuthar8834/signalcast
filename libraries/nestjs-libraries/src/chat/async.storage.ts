@@ -1,6 +1,6 @@
 // context.ts
 import { AsyncLocalStorage } from 'node:async_hooks';
-import type { SelfHostedInstance } from '@gitroom/nestjs-libraries/chat/mcp.relay.service';
+import type { SelfHostedInstance } from '@signalcast/nestjs-libraries/chat/mcp.relay.service';
 
 type Ctx = {
   requestId: string;

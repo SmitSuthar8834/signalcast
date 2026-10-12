@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ClippingTranscript } from '@gitroom/nestjs-libraries/upload/clipping.processor.interface';
+import { ClippingTranscript } from '@signalcast/nestjs-libraries/upload/clipping.processor.interface';
 
 @Injectable()
 export class DeepgramService {

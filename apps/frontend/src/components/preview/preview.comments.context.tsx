@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 import useSWR from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 
 export interface PreviewComment {
   id: string;

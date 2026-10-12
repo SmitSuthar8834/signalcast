@@ -1,10 +1,10 @@
-import { videoWrapper } from '@gitroom/frontend/components/videos/video.wrapper';
+import { videoWrapper } from '@signalcast/frontend/components/videos/video.wrapper';
 import { FC, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { useVideo } from '@gitroom/frontend/components/videos/video.context.wrapper';
-import { Textarea } from '@gitroom/react/form/textarea';
-import { MultiMediaComponent } from '@gitroom/frontend/components/media/media.component';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { useVideo } from '@signalcast/frontend/components/videos/video.context.wrapper';
+import { Textarea } from '@signalcast/react/form/textarea';
+import { MultiMediaComponent } from '@signalcast/frontend/components/media/media.component';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 
 export interface Voice {
   id: string;

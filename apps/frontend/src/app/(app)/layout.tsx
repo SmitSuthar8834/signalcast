@@ -1,29 +1,29 @@
-import { SentryComponent } from '@gitroom/frontend/components/layout/sentry.component';
+import { SentryComponent } from '@signalcast/frontend/components/layout/sentry.component';
 
 export const dynamic = 'force-dynamic';
 import '../global.scss';
 import 'react-tooltip/dist/react-tooltip.css';
 import '@copilotkit/react-ui/styles.css';
-import LayoutContext from '@gitroom/frontend/components/layout/layout.context';
+import LayoutContext from '@signalcast/frontend/components/layout/layout.context';
 import { ReactNode } from 'react';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import PlausibleProvider from 'next-plausible';
 import clsx from 'clsx';
-import { VariableContextComponent } from '@gitroom/react/helpers/variable.context';
+import { VariableContextComponent } from '@signalcast/react/helpers/variable.context';
 import { Fragment } from 'react';
-import { PHProvider } from '@gitroom/react/helpers/posthog';
-import UtmSaver from '@gitroom/helpers/utils/utm.saver';
-import { DubAnalytics } from '@gitroom/frontend/components/layout/dubAnalytics';
-import { FacebookComponent } from '@gitroom/frontend/components/layout/facebook.component';
-import { GoogleTagManagerComponent } from '@gitroom/frontend/components/layout/gtm.component';
+import { PHProvider } from '@signalcast/react/helpers/posthog';
+import UtmSaver from '@signalcast/helpers/utils/utm.saver';
+import { DubAnalytics } from '@signalcast/frontend/components/layout/dubAnalytics';
+import { FacebookComponent } from '@signalcast/frontend/components/layout/facebook.component';
+import { GoogleTagManagerComponent } from '@signalcast/frontend/components/layout/gtm.component';
 import { cookies } from 'next/headers';
 import {
   cookieName,
   fallbackLng,
-} from '@gitroom/react/translation/i18n.config';
-import { HtmlComponent } from '@gitroom/frontend/components/layout/html.component';
+} from '@signalcast/react/translation/i18n.config';
+import { HtmlComponent } from '@signalcast/frontend/components/layout/html.component';
 import Script from 'next/script';
-import { ChangeDirClient } from '@gitroom/frontend/components/new-layout/change.dir.client';
+import { ChangeDirClient } from '@signalcast/frontend/components/new-layout/change.dir.client';
 
 const jakartaSans = Plus_Jakarta_Sans({
   weight: ['600', '500'],
@@ -67,9 +67,9 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
           discordUrl={process.env.NEXT_PUBLIC_DISCORD_SUPPORT!}
           frontEndUrl={process.env.FRONTEND_URL!}
           isGeneral={!!process.env.IS_GENERAL}
-          genericOauth={!!process.env.POSTIZ_GENERIC_OAUTH}
-          oauthLogoUrl={process.env.NEXT_PUBLIC_POSTIZ_OAUTH_LOGO_URL!}
-          oauthDisplayName={process.env.NEXT_PUBLIC_POSTIZ_OAUTH_DISPLAY_NAME!}
+          genericOauth={!!process.env.SIGNALCAST_GENERIC_OAUTH}
+          oauthLogoUrl={process.env.NEXT_PUBLIC_SIGNALCAST_OAUTH_LOGO_URL!}
+          oauthDisplayName={process.env.NEXT_PUBLIC_SIGNALCAST_OAUTH_DISPLAY_NAME!}
           uploadDirectory={process.env.NEXT_PUBLIC_UPLOAD_STATIC_DIRECTORY!}
           cloudflareUrl={process.env.CLOUDFLARE_BUCKET_URL || ''}
           mainUrl={process.env.MAIN_URL || ''}

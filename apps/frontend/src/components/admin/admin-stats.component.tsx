@@ -2,10 +2,10 @@
 
 import React, { FC, useCallback, useState } from 'react';
 import useSWR from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { Button } from '@gitroom/react/form/button';
-import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { Button } from '@signalcast/react/form/button';
+import { LoadingComponent } from '@signalcast/frontend/components/layout/loading';
 
 interface PerSocial {
   provider: string;

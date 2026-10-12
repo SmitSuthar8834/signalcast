@@ -1,11 +1,11 @@
 'use client';
 
 import React, { FC, useCallback } from 'react';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { setCookie } from '@gitroom/frontend/components/layout/layout.context';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { setCookie } from '@signalcast/frontend/components/layout/layout.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 export const LogoutComponent: FC<{ isIcon?: boolean }> = ({ isIcon }) => {
   const fetch = useFetch();
   const { isGeneral, isSecured } = useVariables();
@@ -44,7 +44,7 @@ export const LogoutComponent: FC<{ isIcon?: boolean }> = ({ isIcon }) => {
             data-tooltip-id="tooltip"
             data-tooltip-content={`
             ${t('logout_from', 'Logout from')}${' '}
-            ${isGeneral ? ' Signalcast' : ' Gitroom'}
+            ${' Signalcast'}
             `}
           >
             <path
@@ -55,7 +55,7 @@ export const LogoutComponent: FC<{ isIcon?: boolean }> = ({ isIcon }) => {
         ) : (
           <span className="text-red-400">
             {t('logout_from', 'Logout from')}
-            {isGeneral ? ' Signalcast' : ' Gitroom'}
+            {' Signalcast'}
           </span>
         )}
       </div>

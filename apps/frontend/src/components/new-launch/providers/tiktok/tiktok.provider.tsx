@@ -7,18 +7,18 @@ import {
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
-import { TikTokDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/tiktok.dto';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { Select } from '@gitroom/react/form/select';
-import { Checkbox } from '@gitroom/react/form/checkbox';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
+import { TikTokDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/tiktok.dto';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { Select } from '@signalcast/react/form/select';
+import { Checkbox } from '@signalcast/react/form/checkbox';
 import clsx from 'clsx';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useIntegration } from '@gitroom/frontend/components/launches/helpers/use.integration';
-import { Input } from '@gitroom/react/form/input';
-import { TiktokPreview } from '@gitroom/frontend/components/new-launch/providers/tiktok/tiktok.preview';
-import { TikTokMusicSelector } from '@gitroom/frontend/components/new-launch/providers/tiktok/tiktok.music';
-import { TikTokLocationSelector } from '@gitroom/frontend/components/new-launch/providers/tiktok/tiktok.location';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useIntegration } from '@signalcast/frontend/components/launches/helpers/use.integration';
+import { Input } from '@signalcast/react/form/input';
+import { TiktokPreview } from '@signalcast/frontend/components/new-launch/providers/tiktok/tiktok.preview';
+import { TikTokMusicSelector } from '@signalcast/frontend/components/new-launch/providers/tiktok/tiktok.music';
+import { TikTokLocationSelector } from '@signalcast/frontend/components/new-launch/providers/tiktok/tiktok.location';
 
 const TikTokSettings: FC<{
   values?: any;

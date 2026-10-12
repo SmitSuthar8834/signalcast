@@ -2,11 +2,11 @@
 
 import { EventEmitter } from 'events';
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
-import { TopTitle } from '@gitroom/frontend/components/launches/helpers/top.title.component';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
-import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+import { TopTitle } from '@signalcast/frontend/components/launches/helpers/top.title.component';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
+import { useLaunchStore } from '@signalcast/frontend/components/new-launch/store';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 const postUrlEmitter = new EventEmitter();
 
 export const MediaSettingsLayout = () => {

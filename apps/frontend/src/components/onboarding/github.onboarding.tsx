@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
-import { GithubComponent } from '@gitroom/frontend/components/settings/github.component';
+import { GithubComponent } from '@signalcast/frontend/components/settings/github.component';
 export const GithubOnboarding: FC = () => {
   const fetch = useFetch();
   const load = useCallback(async (path: string) => {

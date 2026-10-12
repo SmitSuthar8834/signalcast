@@ -7,24 +7,24 @@ import {
   Post,
   Req,
 } from '@nestjs/common';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
 import { Organization, User } from '@prisma/client';
-import { BillingSubscribeDto } from '@gitroom/nestjs-libraries/dtos/billing/billing.subscribe.dto';
-import { AdminApplyCouponDto } from '@gitroom/nestjs-libraries/dtos/billing/admin.apply.coupon.dto';
+import { BillingSubscribeDto } from '@signalcast/nestjs-libraries/dtos/billing/billing.subscribe.dto';
+import { AdminApplyCouponDto } from '@signalcast/nestjs-libraries/dtos/billing/admin.apply.coupon.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { GetUserFromRequest } from '@gitroom/nestjs-libraries/user/user.from.request';
-import { NotificationService } from '@gitroom/nestjs-libraries/database/prisma/notifications/notification.service';
+import { GetUserFromRequest } from '@signalcast/nestjs-libraries/user/user.from.request';
+import { NotificationService } from '@signalcast/nestjs-libraries/database/prisma/notifications/notification.service';
 import { Request } from 'express';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { UsersService } from '@gitroom/nestjs-libraries/database/prisma/users/users.service';
-import { PaymentService } from '@gitroom/nestjs-libraries/services/payment/payment.service';
-import { BillingSyncDto } from '@gitroom/nestjs-libraries/dtos/billing/billing.sync.dto';
-import { CheckPolicies } from '@gitroom/backend/services/auth/permissions/permissions.ability';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { UsersService } from '@signalcast/nestjs-libraries/database/prisma/users/users.service';
+import { PaymentService } from '@signalcast/nestjs-libraries/services/payment/payment.service';
+import { BillingSyncDto } from '@signalcast/nestjs-libraries/dtos/billing/billing.sync.dto';
+import { CheckPolicies } from '@signalcast/backend/services/auth/permissions/permissions.ability';
 import {
   AuthorizationActions,
   Sections,
-} from '@gitroom/backend/services/auth/permissions/permission.exception.class';
+} from '@signalcast/backend/services/auth/permissions/permission.exception.class';
 
 @ApiTags('Billing')
 @Controller('/billing')

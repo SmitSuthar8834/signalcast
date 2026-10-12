@@ -1,7 +1,7 @@
-import { Button } from '@gitroom/react/form/button';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
+import { Button } from '@signalcast/react/form/button';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
 import { FC, useCallback } from 'react';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 export const MergePost: FC<{
   merge: () => void;
 }> = (props) => {

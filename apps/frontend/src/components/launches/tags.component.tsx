@@ -2,23 +2,23 @@
 
 import { FC, useCallback, useMemo, useState } from 'react';
 import { ReactTags } from 'react-tag-autocomplete';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
-import { Input } from '@gitroom/react/form/input';
-import { ColorPicker } from '@gitroom/react/form/color.picker';
-import { Button } from '@gitroom/react/form/button';
+import { Input } from '@signalcast/react/form/input';
+import { ColorPicker } from '@signalcast/react/form/color.picker';
+import { Button } from '@signalcast/react/form/button';
 import { uniqBy } from 'lodash';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import { useClickOutside } from '@mantine/hooks';
 import clsx from 'clsx';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
 import {
   TagIcon,
   DropdownArrowIcon,
   PlusIcon,
   CheckmarkIcon,
   PencilIcon,
-} from '@gitroom/frontend/components/ui/icons';
+} from '@signalcast/frontend/components/ui/icons';
 
 export const TagsComponent: FC<{
   name: string;

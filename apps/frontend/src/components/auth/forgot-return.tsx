@@ -1,13 +1,13 @@
 'use client';
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import Link from 'next/link';
-import { Button } from '@gitroom/react/form/button';
-import { Input } from '@gitroom/react/form/input';
+import { Button } from '@signalcast/react/form/button';
+import { Input } from '@signalcast/react/form/input';
 import { useMemo, useState } from 'react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { ForgotReturnPasswordDto } from '@gitroom/nestjs-libraries/dtos/auth/forgot-return.password.dto';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { ForgotReturnPasswordDto } from '@signalcast/nestjs-libraries/dtos/auth/forgot-return.password.dto';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 type Inputs = {
   password: string;
   repeatPassword: string;

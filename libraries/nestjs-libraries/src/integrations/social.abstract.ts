@@ -1,15 +1,15 @@
-import { timer } from '@gitroom/helpers/utils/timer';
+import { timer } from '@signalcast/helpers/utils/timer';
 import { Integration } from '@prisma/client';
 import {
   AuthTokenDetails,
   PendingCheckResponse,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
 import { ApplicationFailure } from '@temporalio/activity';
-import { setHeartbeatDetails } from '@gitroom/nestjs-libraries/temporal/temporal.heartbeat';
+import { setHeartbeatDetails } from '@signalcast/nestjs-libraries/temporal/temporal.heartbeat';
 import {
   getSsrfSafeAxios,
   getSsrfSafeDispatcher,
-} from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+} from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import sharp from 'sharp';
 import { createReadStream, readFileSync, statSync } from 'fs';
 import { Readable } from 'stream';

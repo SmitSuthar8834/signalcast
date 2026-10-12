@@ -26,14 +26,14 @@
     "strict": true,
     "paths": {
       "@langchain/langgraph/prebuilt": ["node_modules/@langchain/langgraph/dist/prebuilt/index.d.ts"],
-      "@gitroom/backend/*": ["apps/backend/src/*"],
-      "@gitroom/frontend/*": ["apps/frontend/src/*"],
-      "@gitroom/helpers/*": ["libraries/helpers/src/*"],
-      "@gitroom/nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"],
-      "@gitroom/react/*": ["libraries/react-shared-libraries/src/*"],
-      "@gitroom/plugins/*": ["libraries/plugins/src/*"],
-      "@gitroom/orchestrator/*": ["apps/orchestrator/src/*"],
-      "@gitroom/extension/*": ["apps/extension/src/*"]
+      "@signalcast/backend/*": ["apps/backend/src/*"],
+      "@signalcast/frontend/*": ["apps/frontend/src/*"],
+      "@signalcast/helpers/*": ["libraries/helpers/src/*"],
+      "@signalcast/nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"],
+      "@signalcast/react/*": ["libraries/react-shared-libraries/src/*"],
+      "@signalcast/plugins/*": ["libraries/plugins/src/*"],
+      "@signalcast/orchestrator/*": ["apps/orchestrator/src/*"],
+      "@signalcast/extension/*": ["apps/extension/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

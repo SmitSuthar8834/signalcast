@@ -1,14 +1,14 @@
 'use client';
 
 import useSWR from 'swr';
-import { ContextWrapper } from '@gitroom/frontend/components/layout/user.context';
+import { ContextWrapper } from '@signalcast/frontend/components/layout/user.context';
 import { ReactNode, useCallback } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { Toaster } from '@gitroom/react/toaster/toaster';
-import { MantineWrapper } from '@gitroom/react/helpers/mantine.wrapper';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { Toaster } from '@signalcast/react/toaster/toaster';
+import { MantineWrapper } from '@signalcast/react/helpers/mantine.wrapper';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
 import { CopilotKit } from '@copilotkit/react-core';
-import { ToolTip } from '@gitroom/frontend/components/layout/top.tip';
+import { ToolTip } from '@signalcast/frontend/components/layout/top.tip';
 export const PreviewWrapper = ({ children }: { children: ReactNode }) => {
   const fetch = useFetch();
   const { backendUrl } = useVariables();

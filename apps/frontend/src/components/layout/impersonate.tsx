@@ -1,21 +1,21 @@
-import { Input } from '@gitroom/react/form/input';
+import { Input } from '@signalcast/react/form/input';
 import { ChangeEventHandler, FC, useCallback, useMemo, useState } from 'react';
 import useSWR, { useSWRConfig } from 'swr';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { Select } from '@gitroom/react/form/select';
-import { pricing } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/pricing';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { setCookie } from '@gitroom/frontend/components/layout/layout.context';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { useModals } from '@gitroom/frontend/components/layout/new-modal';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { Button } from '@gitroom/react/form/button';
-import { ImportDebugPostModal } from '@gitroom/frontend/components/launches/import-debug-post.modal';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { Select } from '@signalcast/react/form/select';
+import { pricing } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/pricing';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { setCookie } from '@signalcast/frontend/components/layout/layout.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { useModals } from '@signalcast/frontend/components/layout/new-modal';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { Button } from '@signalcast/react/form/button';
+import { ImportDebugPostModal } from '@signalcast/frontend/components/launches/import-debug-post.modal';
 import { useForm, FormProvider } from 'react-hook-form';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { AdminAddTeamMemberDto } from '@gitroom/nestjs-libraries/dtos/settings/admin.add.team.member.dto';
+import { AdminAddTeamMemberDto } from '@signalcast/nestjs-libraries/dtos/settings/admin.add.team.member.dto';
 
 interface Charge {
   id: string;

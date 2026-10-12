@@ -3,7 +3,7 @@ import { createPublicKey } from 'crypto';
 import {
   AuthProvider,
   AuthProviderAbstract,
-} from '@gitroom/backend/services/auth/providers.interface';
+} from '@signalcast/backend/services/auth/providers.interface';
 
 const getConfig = () => {
   const { APPLE_CLIENT_ID, APPLE_TEAM_ID, APPLE_KEY_ID, APPLE_PRIVATE_KEY } =

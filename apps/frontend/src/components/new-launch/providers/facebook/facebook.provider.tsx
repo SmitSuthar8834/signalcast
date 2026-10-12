@@ -3,18 +3,18 @@
 import {
   PostComment,
   withProvider,
-} from '@gitroom/frontend/components/new-launch/providers/high.order.provider';
+} from '@signalcast/frontend/components/new-launch/providers/high.order.provider';
 import {
   FacebookDto,
   FACEBOOK_PRESETS,
-} from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/facebook.dto';
-import { getPresetBackground } from '@gitroom/frontend/components/new-launch/providers/facebook/facebook.background';
-import { Input } from '@gitroom/react/form/input';
-import { Select } from '@gitroom/react/form/select';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { useIntegration } from '@gitroom/frontend/components/launches/helpers/use.integration';
-import { FacebookPreview } from '@gitroom/frontend/components/new-launch/providers/facebook/facebook.preview';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+} from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/facebook.dto';
+import { getPresetBackground } from '@signalcast/frontend/components/new-launch/providers/facebook/facebook.background';
+import { Input } from '@signalcast/react/form/input';
+import { Select } from '@signalcast/react/form/select';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { useIntegration } from '@signalcast/frontend/components/launches/helpers/use.integration';
+import { FacebookPreview } from '@signalcast/frontend/components/new-launch/providers/facebook/facebook.preview';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 import { useEffect } from 'react';
 
 const postType = [

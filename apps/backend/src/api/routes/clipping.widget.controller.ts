@@ -2,8 +2,8 @@ import { Controller, Get, Header, Query, Req } from '@nestjs/common';
 import { Request } from 'express';
 import { ApiTags } from '@nestjs/swagger';
 import { Organization } from '@prisma/client';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
-import { ClippingService } from '@gitroom/nestjs-libraries/database/prisma/clipping/clipping.service';
+import { GetOrgFromRequest } from '@signalcast/nestjs-libraries/user/org.from.request';
+import { ClippingService } from '@signalcast/nestjs-libraries/database/prisma/clipping/clipping.service';
 
 @ApiTags('Clipping')
 @Controller('/clipping-widget')

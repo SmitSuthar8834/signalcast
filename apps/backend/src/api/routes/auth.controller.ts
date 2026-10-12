@@ -10,24 +10,24 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
-import { ThrottlerRealIpGuard } from '@gitroom/nestjs-libraries/throttler/throttler.provider';
+import { ThrottlerRealIpGuard } from '@signalcast/nestjs-libraries/throttler/throttler.provider';
 import { Response, Request } from 'express';
 
-import { CreateOrgUserDto } from '@gitroom/nestjs-libraries/dtos/auth/create.org.user.dto';
-import { LoginUserDto } from '@gitroom/nestjs-libraries/dtos/auth/login.user.dto';
-import { AuthService } from '@gitroom/backend/services/auth/auth.service';
-import { ForgotReturnPasswordDto } from '@gitroom/nestjs-libraries/dtos/auth/forgot-return.password.dto';
-import { ForgotPasswordDto } from '@gitroom/nestjs-libraries/dtos/auth/forgot.password.dto';
-import { ResendActivationDto } from '@gitroom/nestjs-libraries/dtos/auth/resend-activation.dto';
+import { CreateOrgUserDto } from '@signalcast/nestjs-libraries/dtos/auth/create.org.user.dto';
+import { LoginUserDto } from '@signalcast/nestjs-libraries/dtos/auth/login.user.dto';
+import { AuthService } from '@signalcast/backend/services/auth/auth.service';
+import { ForgotReturnPasswordDto } from '@signalcast/nestjs-libraries/dtos/auth/forgot-return.password.dto';
+import { ForgotPasswordDto } from '@signalcast/nestjs-libraries/dtos/auth/forgot.password.dto';
+import { ResendActivationDto } from '@signalcast/nestjs-libraries/dtos/auth/resend-activation.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { getCookieUrlFromDomain } from '@gitroom/helpers/subdomain/subdomain.management';
-import { EmailService } from '@gitroom/nestjs-libraries/services/email.service';
+import { getCookieUrlFromDomain } from '@signalcast/helpers/subdomain/subdomain.management';
+import { EmailService } from '@signalcast/nestjs-libraries/services/email.service';
 import { RealIP } from 'nestjs-real-ip';
-import { UserAgent } from '@gitroom/nestjs-libraries/user/user.agent';
+import { UserAgent } from '@signalcast/nestjs-libraries/user/user.agent';
 import { Provider } from '@prisma/client';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 import * as Sentry from '@sentry/nestjs';
-import { FarcasterProvider } from '@gitroom/nestjs-libraries/integrations/social/farcaster.provider';
+import { FarcasterProvider } from '@signalcast/nestjs-libraries/integrations/social/farcaster.provider';
 
 @ApiTags('Auth')
 @Controller('/auth')

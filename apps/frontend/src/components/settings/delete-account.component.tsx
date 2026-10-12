@@ -1,14 +1,14 @@
 'use client';
 
 import React, { FC, useCallback, useState } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { Button } from '@gitroom/react/form/button';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { setCookie } from '@gitroom/frontend/components/layout/layout.context';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { TrashIcon } from '@gitroom/frontend/components/ui/icons';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { Button } from '@signalcast/react/form/button';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { setCookie } from '@signalcast/frontend/components/layout/layout.context';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { TrashIcon } from '@signalcast/frontend/components/ui/icons';
 
 const DeleteAccountComponent: FC<{ isLink?: boolean }> = ({ isLink }) => {
   const t = useT();

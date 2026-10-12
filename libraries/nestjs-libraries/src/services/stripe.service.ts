@@ -1,24 +1,24 @@
 import Stripe from 'stripe';
 import { BadRequestException } from '@nestjs/common';
 import { Organization, User } from '@prisma/client';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { OrganizationService } from '@gitroom/nestjs-libraries/database/prisma/organizations/organization.service';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { BillingSubscribeDto } from '@gitroom/nestjs-libraries/dtos/billing/billing.subscribe.dto';
+import { SubscriptionService } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { OrganizationService } from '@signalcast/nestjs-libraries/database/prisma/organizations/organization.service';
+import { makeId } from '@signalcast/nestjs-libraries/services/make.is';
+import { BillingSubscribeDto } from '@signalcast/nestjs-libraries/dtos/billing/billing.subscribe.dto';
 import { groupBy } from 'lodash';
-import { pricing } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/pricing';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { TrackService } from '@gitroom/nestjs-libraries/track/track.service';
-import { UsersService } from '@gitroom/nestjs-libraries/database/prisma/users/users.service';
-import { TrackEnum } from '@gitroom/nestjs-libraries/user/track.enum';
+import { pricing } from '@signalcast/nestjs-libraries/database/prisma/subscriptions/pricing';
+import { AuthService } from '@signalcast/helpers/auth/auth.service';
+import { TrackService } from '@signalcast/nestjs-libraries/track/track.service';
+import { UsersService } from '@signalcast/nestjs-libraries/database/prisma/users/users.service';
+import { TrackEnum } from '@signalcast/nestjs-libraries/user/track.enum';
 import {
   PaymentInvoice,
   PaymentPlatform,
   PaymentProvider,
   PaymentProviderAbstract,
-} from '@gitroom/nestjs-libraries/services/payment/payment.provider.interface';
+} from '@signalcast/nestjs-libraries/services/payment/payment.provider.interface';
 
-import { STRIPE_PROVIDER } from '@gitroom/nestjs-libraries/services/payment/payment.providers';
+import { STRIPE_PROVIDER } from '@signalcast/nestjs-libraries/services/payment/payment.providers';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_nothing');
 
@@ -54,7 +54,7 @@ export class StripeService extends PaymentProviderAbstract {
     if (
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      event?.data?.object?.metadata?.service !== 'gitroom' &&
+      event?.data?.object?.metadata?.service !== 'signalcast' &&
       event.type !== 'invoice.payment_succeeded'
     ) {
       return { ok: true };
@@ -465,7 +465,7 @@ export class StripeService extends PaymentProviderAbstract {
       for (const s of subscriptions) {
         const updated = await stripe.subscriptions.update(s.id, {
           cancel_at_period_end: false,
-          metadata: { service: 'gitroom', id },
+          metadata: { service: 'signalcast', id },
         });
         cancel_at = cancel_at || updated.cancel_at;
       }
@@ -505,7 +505,7 @@ export class StripeService extends PaymentProviderAbstract {
     for (const s of subscriptions) {
       const updated = await stripe.subscriptions.update(s.id, {
         cancel_at_period_end: true,
-        metadata: { service: 'gitroom', id },
+        metadata: { service: 'signalcast', id },
       });
       if (updated.cancel_at && (!cancel_at || updated.cancel_at < cancel_at)) {
         cancel_at = updated.cancel_at;
@@ -657,7 +657,7 @@ export class StripeService extends PaymentProviderAbstract {
       subscription_data: {
         ...(allowTrial ? { trial_period_days: 7 } : {}),
         metadata: {
-          service: 'gitroom',
+          service: 'signalcast',
           ...body,
           userId,
           uniqueId,
@@ -718,7 +718,7 @@ export class StripeService extends PaymentProviderAbstract {
       subscription_data: {
         ...(allowTrial ? { trial_period_days: 7 } : {}),
         metadata: {
-          service: 'gitroom',
+          service: 'signalcast',
           ...body,
           userId,
           uniqueId,
@@ -1046,7 +1046,7 @@ export class StripeService extends PaymentProviderAbstract {
       await stripe.subscriptions.update(currentUserSubscription.data[0].id, {
         cancel_at_period_end: false,
         metadata: {
-          service: 'gitroom',
+          service: 'signalcast',
           ...body,
           userId,
           id,
@@ -1321,7 +1321,7 @@ export class StripeService extends PaymentProviderAbstract {
       ...(body.months === 1
         ? { duration: 'once' }
         : { duration: 'repeating', duration_in_months: body.months }),
-      metadata: { service: 'gitroom', organizationId },
+      metadata: { service: 'signalcast', organizationId },
     });
 
     await stripe.subscriptions.update(stripeSubscription.id, {

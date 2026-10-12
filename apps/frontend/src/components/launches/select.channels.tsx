@@ -4,12 +4,12 @@ import React, { FC, useCallback, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import { uniqBy } from 'lodash';
 import { useClickOutside } from '@mantine/hooks';
-import { useCalendar } from '@gitroom/frontend/components/launches/calendar.context';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import { Checkbox } from '@gitroom/react/form/checkbox';
-import { FilterIcon } from '@gitroom/frontend/components/ui/icons';
-import { Check } from '@gitroom/frontend/components/launches/tags.component';
-import { IntegrationListRow } from '@gitroom/frontend/components/new-launch/picks.socials.component';
+import { useCalendar } from '@signalcast/frontend/components/launches/calendar.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import { Checkbox } from '@signalcast/react/form/checkbox';
+import { FilterIcon } from '@signalcast/frontend/components/ui/icons';
+import { Check } from '@signalcast/frontend/components/launches/tags.component';
+import { IntegrationListRow } from '@signalcast/frontend/components/new-launch/picks.socials.component';
 
 export const SelectChannels: FC<{
   list?: boolean;

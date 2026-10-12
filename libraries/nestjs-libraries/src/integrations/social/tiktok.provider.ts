@@ -5,23 +5,23 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
+} from '@signalcast/nestjs-libraries/integrations/social/social.integrations.interface';
 import dayjs from 'dayjs';
-import { makeSecureId } from '@gitroom/nestjs-libraries/services/make.secure.id';
+import { makeSecureId } from '@signalcast/nestjs-libraries/services/make.secure.id';
 import {
   BadBody,
   Disconnect,
   RefreshToken,
   SocialAbstract,
   ValidityMedia,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
-import { TikTokDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/tiktok.dto';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+} from '@signalcast/nestjs-libraries/integrations/social.abstract';
+import { TikTokDto } from '@signalcast/nestjs-libraries/dtos/posts/providers-settings/tiktok.dto';
+import { timer } from '@signalcast/helpers/utils/timer';
+import { hasExtension } from '@signalcast/helpers/utils/has.extension';
 import { createReadStream } from 'fs';
-import { getSsrfSafeDispatcher } from '@gitroom/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
+import { getSsrfSafeDispatcher } from '@signalcast/nestjs-libraries/dtos/webhooks/ssrf.safe.dispatcher';
 import { Integration } from '@prisma/client';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
+import { Rules } from '@signalcast/nestjs-libraries/chat/rules.description.decorator';
 
 @Rules(
   [

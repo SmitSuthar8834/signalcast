@@ -2,10 +2,10 @@
 
 import { FC, ReactNode, useCallback, useState } from 'react';
 import clsx from 'clsx';
-import { useVariables } from '@gitroom/react/helpers/variable.context';
-import { useUser } from '@gitroom/frontend/components/layout/user.context';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
-import DeleteAccountComponent from '@gitroom/frontend/components/settings/delete-account.component';
+import { useVariables } from '@signalcast/react/helpers/variable.context';
+import { useUser } from '@signalcast/frontend/components/layout/user.context';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
+import DeleteAccountComponent from '@signalcast/frontend/components/settings/delete-account.component';
 const useFaqList = () => {
   const { isGeneral } = useVariables();
   const user = useUser();
@@ -15,11 +15,11 @@ const useFaqList = () => {
       ? [
           {
             title: t(
-              'faq_am_i_going_to_be_charged_by_postiz',
+              'faq_am_i_going_to_be_charged_by_signalcast',
               'Am I going to be charged by Signalcast?'
             ),
             description: t(
-              'faq_to_confirm_credit_card_information_postiz_will_hold',
+              'faq_to_confirm_credit_card_information_signalcast_will_hold',
               'To confirm credit card information Signalcast will hold $2 and release it immediately, you can cancel your subscription anytime from settings without talking to a person'
             ),
           },
@@ -27,24 +27,24 @@ const useFaqList = () => {
       : []),
     {
       title: t(
-        'faq_can_i_trust_postiz_gitroom',
-        `Can I trust ${isGeneral ? 'Signalcast' : 'Gitroom'}?`
+        'faq_can_i_trust_signalcast',
+        `Can I trust ${'Signalcast'}?`
       ),
       description: t(
-        'faq_postiz_gitroom_is_proudly_open_source',
+        'faq_signalcast_is_proudly_open_source',
         `${
-          isGeneral ? 'Signalcast' : 'Gitroom'
+          'Signalcast'
         } is proudly open-source! We believe in an ethical and transparent culture, meaning that ${
-          isGeneral ? 'Signalcast' : 'Gitroom'
+          'Signalcast'
         } will live forever. You can check out the entire code or use it for personal projects. To view the open-source repository, <a href="https://github.com/SmitSuthar8834/signalcast" target="_blank" style="text-decoration: underline;">click here</a>.`
       ),
     },
     {
       title: t('faq_what_are_channels', 'What are channels?'),
       description: t(
-        'faq_postiz_gitroom_allows_you_to_schedule_posts',
+        'faq_signalcast_allows_you_to_schedule_posts',
         `${
-          isGeneral ? 'Signalcast' : 'Gitroom'
+          'Signalcast'
         } allows you to schedule your posts between different channels.
 A channel is a publishing platform where you can schedule your posts.
 For example, you can schedule your posts on X, Facebook, Instagram, TikTok, YouTube, Reddit, Linkedin, Dribbble, Threads and Pinterest.`
@@ -67,7 +67,7 @@ For example, you can schedule your posts on X, Facebook, Instagram, TikTok, YouT
             description: t(
               'faq_delete_account_description',
               `If you don't want to continue using ${
-                isGeneral ? 'Signalcast' : 'Gitroom'
+                'Signalcast'
               }, you can delete your account, including all your organizations, channels and posts. This action cannot be undone.`
             ),
             content: <DeleteAccountComponent isLink={true} />,

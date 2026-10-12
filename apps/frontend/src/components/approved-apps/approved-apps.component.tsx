@@ -1,12 +1,12 @@
 'use client';
 
 import { FC, Fragment, useCallback } from 'react';
-import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
+import { useFetch } from '@signalcast/helpers/utils/custom.fetch';
 import useSWR from 'swr';
-import { Button } from '@gitroom/react/form/button';
-import { useToaster } from '@gitroom/react/toaster/toaster';
-import { deleteDialog } from '@gitroom/react/helpers/delete.dialog';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { Button } from '@signalcast/react/form/button';
+import { useToaster } from '@signalcast/react/toaster/toaster';
+import { deleteDialog } from '@signalcast/react/helpers/delete.dialog';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 
 const useApprovedApps = () => {
   const fetch = useFetch();

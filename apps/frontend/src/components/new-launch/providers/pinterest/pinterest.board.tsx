@@ -1,10 +1,10 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import { useCustomProviderFunction } from '@gitroom/frontend/components/launches/helpers/use.custom.provider.function';
-import { Select } from '@gitroom/react/form/select';
-import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
-import { useT } from '@gitroom/react/translation/get.transation.service.client';
+import { useCustomProviderFunction } from '@signalcast/frontend/components/launches/helpers/use.custom.provider.function';
+import { Select } from '@signalcast/react/form/select';
+import { useSettings } from '@signalcast/frontend/components/launches/helpers/use.values';
+import { useT } from '@signalcast/react/translation/get.transation.service.client';
 export const PinterestBoard: FC<{
   name: string;
   onChange: (event: {

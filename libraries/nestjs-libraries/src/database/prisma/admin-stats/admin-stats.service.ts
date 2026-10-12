@@ -3,7 +3,7 @@ import {
   AdminStatsRepository,
   OrgActivityParams,
   StatsParams,
-} from '@gitroom/nestjs-libraries/database/prisma/admin-stats/admin-stats.repository';
+} from '@signalcast/nestjs-libraries/database/prisma/admin-stats/admin-stats.repository';
 
 @Injectable()
 export class AdminStatsService {
